@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sheryians Assignment 1 | Pokémon Finder By Abdur Rahim</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <header>
+        <nav class="navbar">
+          <div class="hamburger-menu nav-btn"><i class="ri-menu-line"></i></div>
+          <div class="logo">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/960px-International_Pok%C3%A9mon_logo.svg.png"
+              alt="Pokémon Logo"
+            />
+          </div>
+          <div class="light-dark-btn nav-btn"><i class="ri-sun-line"></i></div>
+        </nav>
+      </header>
+      <section class="search-filter">
+        <div class="search-box">
+          <button><i class="ri-search-line"></i></button>
+          <input type="text" placeholder="Search for a Pokémon..." />
+        </div>
+        <div class="filter">
+          <div class="filter-option">
+            <select id="country" name="country">
+              <option value="">Filter by types (1)</option>
+              <option value="usa">Meowscarada</option>
+              <option value="uk">Pawniard</option>
+              <option value="canada">Houndoom</option>
+              <option value="australia">Inkay</option>
+            </select>
+          </div>
+          <div class="filter-icon">
+            <img src="../01-assignment/bar-sort.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <!-- ===================Card section=================== -->
+      <section class="card-section">
+        <div class="card-container card1">
+          <div class="card-socials">
+            <div class="card-number">
+              <p>#0908</p>
+              <i class="ri-leaf-fill"></i>
+            </div>
+            <div class="heart-icon">
+              <i class="ri-heart-line"></i>
+            </div>
+          </div>
+          <div class="card-img">
+            <img src="../01-assignment/asstes/card1.png" alt="" />
+          </div>
+          <div class="card-title">
+            <h2>Meowscarada</h2>
+          </div>
+          <div class="card-link">
+            <div class="card-ctg">
+              <i class="ri-leaf-fill"></i>
+              <p>Grass</p>
+            </div>
+            <div class="arrow-icon">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </div>
+        <div class="card-container card2">
+          <div class="card-socials">
+            <div class="card-number">
+              <p>#0624</p>
+              <i class="ri-settings-fill"></i>
+            </div>
+            <div class="heart-icon">
+              <i class="ri-heart-line"></i>
+            </div>
+          </div>
+          <div class="card-img">
+            <img src="../01-assignment/asstes/card2.png" alt="" />
+          </div>
+          <div class="card-title">
+            <h2>Pawniard</h2>
+          </div>
+          <div class="card-link">
+            <div class="card-ctg">
+              <i class="ri-settings-fill"></i>
+              <p>Dark / steel</p>
+            </div>
+            <div class="arrow-icon">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </div>
+        <div class="card-container card3">
+          <div class="card-socials">
+            <div class="card-number">
+              <p>#0229</p>
+              <div class="card-icon">
+                <img src="../01-assignment/asstes/fire-icon.png" alt="" />
+              </div>
+            </div>
+            <div class="heart-icon">
+              <i class="ri-heart-line"></i>
+            </div>
+          </div>
+          <div class="card-img">
+            <img src="../01-assignment/asstes/card3.png" alt="" />
+          </div>
+          <div class="card-title">
+            <h2>Houndoom</h2>
+          </div>
+          <div class="card-link">
+            <div class="card-ctg">
+              <img src="../01-assignment/asstes/fire-icon.png" alt="" />
+              <p>Dark <span>/</span> Fire</p>
+            </div>
+            <div class="arrow-icon">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </div>
+        <div class="card-container card4">
+          <div class="card-socials">
+            <div class="card-number">
+              <p>#0686</p>
+              <div class="card-icon">
+                <img src="../01-assignment/asstes/water-drop.png" alt="" />
+              </div>
+            </div>
+            <div class="heart-icon">
+              <i class="ri-heart-line"></i>
+            </div>
+          </div>
+          <div class="card-img">
+            <img src="../01-assignment/asstes/card4.png" alt="" />
+          </div>
+          <div class="card-title">
+            <h2>Inkay</h2>
+          </div>
+          <div class="card-link">
+            <div class="card-ctg">
+              <img src="../01-assignment/asstes/water-drop.png" alt="" />
+              <p>Dark / Psychic</p>
+            </div>
+            <div class="arrow-icon">
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============explore section================= -->
+      <section class="explore-section">
+        <div class="explore-container">
+          <div class="explore-item">
+            <div class="explore-icon">
+              <img src="../01-assignment/asstes/game.png" alt="" />
+            </div>
+            <div class="explore-text">
+              <h3>Explore</h3>
+              <p>Discover all your favorite Pokémon</p>
+            </div>
+            <div class="vertical-line"></div>
+          </div>
+          <div class="explore-item item2">
+            <div class="explore-icon">
+              <img
+                class="leaf-icon"
+                src="../01-assignment/asstes/leaf-fill.png"
+                alt=""
+              />
+            </div>
+            <div class="explore-text">
+              <h3>Filter</h3>
+              <p>Find Pokémon by types and abilities</p>
+            </div>
+            <div class="vertical-line"></div>
+          </div>
+          <div class="explore-item item3">
+            <div class="explore-icon">
+              <img
+                class="star-icon"
+                src="../01-assignment/asstes/star.png"
+                alt=""
+              />
+            </div>
+            <div class="explore-text">
+              <h3>Collection</h3>
+              <p>Save and manage your collection</p>
+            </div>
+            <div class="vertical-line"></div>
+          </div>
+          <div class="explore-item item4">
+            <div class="explore-icon">
+              <img
+                class="snake-icon"
+                src="../01-assignment/asstes/snake.png"
+                alt=""
+              />
+            </div>
+            <div class="explore-text">
+              <h3>Stats</h3>
+              <p>View stats and learn about Pokémon</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- =======================footer section================= -->
+      <footer>
+        <img src="../01-assignment/asstes/pokeball.png" alt="">
+        <p>&copy; 2026 Pokémon. All rights reserved | Developed by <a href="https://www.linkedin.com/in/abdur4code">Abdur Rahim</a></p>
+      </footer>
+    </main>
+  </body>
+</html>
