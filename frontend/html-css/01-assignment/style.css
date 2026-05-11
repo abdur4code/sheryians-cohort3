@@ -13,8 +13,11 @@ body {
 }
 
 main {
-  background-color: #f1f4fb;
+  background-image: url("./asstes/pokemon-bg-img.png");
+  background-size: cover;
   width: 100%;
+  max-width: 1500px;
+  margin: auto;
   border-radius: 20px;
 }
 section, footer {
