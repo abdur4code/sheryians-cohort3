@@ -9,6 +9,7 @@ body {
   background-color: black;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px 40px;
@@ -464,4 +465,19 @@ main {
   font-size: 1.5rem;
   color: #383838;
   font-weight: 400;
+}
+/* ------------------foooter section----------------- */
+footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #797979;
+}
+footer a {
+  color: #8184d2;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  transition: all 0.3s ease;
+}
+footer a:hover {
+  color: #7d7d7d;
 }
