@@ -3,21 +3,635 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Task</title>
+
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
   </head>
   <body>
-    <header>
-      <h1>Responsive Task</h1>
+    <div class="announcement-bar">
+      <p>FREE US SHIPPING FOR ORDERS OVER $75</p>
+    </div>
+
+    <header class="hero site-header" aria-label="Matcha hero">
+      <nav class="navbar" aria-label="Primary">
+        <div class="nav-left">
+          <button class="nav-toggle" type="button" aria-label="Open menu">
+            <i class="ri-menu-line" aria-hidden="true"></i>
+          </button>
+          <a href="#"
+            >Shop
+            <span class="icon-box"
+              ><i class="ri-arrow-down-s-line" aria-hidden="true"></i></span
+          ></a>
+          <a href="#"
+            >Learn
+            <span class="icon-box"
+              ><i class="ri-arrow-down-s-line" aria-hidden="true"></i></span
+          ></a>
+          <a href="#"
+            >Reviews
+            <svg
+              width="24"
+              height="23"
+              viewBox="0 0 24 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.9812 0.5L15.2477 8.06787L23.457 8.83867L17.269 14.2882L19.0747 22.3304L11.9812 18.1314L4.88764 22.3304L6.68798 14.2882L0.5 8.83867L8.70931 8.06787L11.9812 0.5Z"
+                fill="#FFB500"
+                stroke="#201C1A"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M14.3623 15.9253C14.0301 16.2301 13.25 16.7223 11.9679 16.7223C10.6858 16.7224 9.64455 15.8909 9.64453 15.4546"
+                stroke="#201C1A"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M9.75832 14.9543C9.75832 14.9543 9.7335 15.2344 9.55474 15.5289C9.37597 15.8235 9.20904 16.0181 9.20904 16.0181"
+                stroke="#201C1A"
+                stroke-linecap="round"
+              ></path>
+              <path
+                d="M7.38728 11.2923C7.38724 10.5121 8.15647 9.87959 9.10445 9.87954C10.0524 9.87949 10.8217 10.5119 10.8218 11.2921"
+                stroke="#201C1A"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M13.1138 11.292C13.1138 10.5118 13.883 9.87932 14.831 9.87927C15.779 9.87922 16.5483 10.5116 16.5483 11.2918"
+                stroke="#201C1A"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <ellipse
+                cx="9.05864"
+                cy="10.9366"
+                rx="2.0737"
+                ry="1.33229"
+                fill="#201C1A"
+              ></ellipse>
+              <ellipse
+                cx="14.8765"
+                cy="10.9363"
+                rx="2.0737"
+                ry="1.33229"
+                fill="#201C1A"
+              ></ellipse>
+              <path
+                d="M10.6392 10.9088L13.1859 10.9087"
+                stroke="#201C1A"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path></svg
+          ></a>
+        </div>
+
+        <div class="nav-logo" aria-label="two leaves and a bud">
+          <img
+            src="https://www.twoleavestea.com/cdn/shop/files/Twoleaves_logo.svg?v=1768205424&width=420"
+            alt="two leaves and a bud"
+          />
+        </div>
+
+        <div class="nav-right">
+          <a href="#">MY ACCOUNT</a>
+          <a href="#">CAFE &amp; WHOLESALE PARTNERS</a>
+          <a href="#">TEA JOURNAL</a>
+          <div class="nav-cart" aria-label="Cart">
+            <i class="ri-shopping-bag-line" aria-hidden="true"></i>
+            <span class="cart-count">0</span>
+          </div>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <h1 class="hero-title">Meet Your Matcha</h1>
+        <p class="hero-text">
+          Whether your mornings are more grab-and-go or intentional and<br />slow,
+          we have matcha and matcha lattes for every ritual.
+        </p>
+        <a class="hero-cta" href="#">Shop Now</a>
+      </div>
     </header>
-    <main>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-        voluptate.
-      </p>
-    </main>
-    <footer>
-      <p>&copy; 2023 Responsive Task. All rights reserved.</p>
-    </footer>
+
+    <section class="statement-section" aria-label="Best sellers intro">
+      <h2 class="statement-title">
+        A <em>great</em> cup starts with a careful<br />pluck - the top two
+        leaves and a bud.
+      </h2>
+    </section>
+
+    <section class="best-sellers-section" aria-label="Best sellers">
+      <div class="statement-badge-container">
+        <span class="statement-badge">BEST SELLERS</span>
+      </div>
+      <div class="swiper best-sellers-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <article class="product-card">
+              <div class="product-media media-sage">
+                <span class="product-badge">TEA SACHETS</span>
+                <div class="product-rating">
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <span>4.71 (84)</span>
+                </div>
+                <button class="product-add" type="button">
+                  <span class="product-add-icon">+</span>
+                  <span class="product-add-text">Add</span>
+                </button>
+                <img
+                  src="https://www.twoleavestea.com/cdn/shop/files/organic_tropical_green_tea_sachet_featured.webp?v=1771579242&width=600"
+                  alt="Organic Tropical Green Tea"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Organic Tropical Green Tea</h3>
+                <p class="product-price">From $11.95</p>
+                <p class="product-desc">
+                  Our Organic Tropical Green is a fruity and fun take on a
+                  classic green tea.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="product-card">
+              <div class="product-media media-yellow">
+                <span class="product-badge">GIFTS &amp; SAMPLERS</span>
+                <div class="product-rating">
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <span>5 (2)</span>
+                </div>
+                <button class="product-add" type="button">
+                  <span class="product-add-icon">+</span>
+                  <span class="product-add-text">Add</span>
+                </button>
+                <img
+                  src="https://www.twoleavestea.com/cdn/shop/files/bundle-herbal-tea-trio-featured-image.webp?v=1772174356&width=600"
+                  alt="Herbal Tea Trio"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Herbal Tea Trio</h3>
+                <p class="product-price">$33.30</p>
+                <p class="product-desc">A trio of soothing herbal teas.</p>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="product-card">
+              <div class="product-media media-mint">
+                <span class="product-badge">NAKED SACHETS</span>
+                <div class="product-rating">
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <span>5 (11)</span>
+                </div>
+                <button class="product-add" type="button">
+                  <span class="product-add-icon">+</span>
+                  <span class="product-add-text">Add</span>
+                </button>
+                <img
+                  src="https://www.twoleavestea.com/cdn/shop/files/peppermint_naked_featured.webp?v=1771580547&width=600"
+                  alt="Organic Peppermint - 50 Naked Tea Sachets"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">
+                  Organic Peppermint - 50 Naked Tea Sachets
+                </h3>
+                <p class="product-price">$21.95</p>
+                <p class="product-desc">
+                  Our organic Peppermint tea is made from peppermint grown in
+                  Washington State.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="product-card">
+              <div class="product-media media-sky">
+                <span class="product-badge">GIFTS &amp; SAMPLERS</span>
+                <div class="product-rating">
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <span>4.85 (41)</span>
+                </div>
+                <button class="product-add" type="button">
+                  <span class="product-add-icon">+</span>
+                  <span class="product-add-text">Add</span>
+                </button>
+                <img
+                  src="https://www.twoleavestea.com/cdn/shop/files/Bamboo_Tea_Chest.webp?v=1772543139&width=600"
+                  alt="Classic Bamboo Tea Chest"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Classic Bamboo Tea Chest</h3>
+                <p class="product-price">$42.95</p>
+                <p class="product-desc">
+                  This 6-slot bamboo box offers a sampling of eight sachets each
+                  of six of our best selling teas.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="product-card">
+              <div class="product-media media-matcha">
+                <span class="product-badge">LATTE MIX</span>
+                <button class="product-add" type="button">
+                  <span class="product-add-icon">+</span>
+                  <span class="product-add-text">Add</span>
+                </button>
+                <img
+                  src="https://www.twoleavestea.com/cdn/shop/files/Latte_Mix.webp?v=1771386671&width=600"
+                  alt="Nice Matcha Tea Latte Mix"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Nice Matcha Tea Latte Mix</h3>
+                <p class="product-price">From $12.95</p>
+                <p class="product-desc">
+                  Our Nice Matcha is a lightly sweetened powdered mix meant for
+                  making tea lattes simple.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="product-card">
+              <div class="product-media media-chai">
+                <span class="product-badge">LATTE MIX</span>
+                <div class="product-rating">
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <span>4.24 (17)</span>
+                </div>
+                <button class="product-add" type="button">
+                  <span class="product-add-icon">+</span>
+                  <span class="product-add-text">Add</span>
+                </button>
+                <img
+                  src="https://www.twoleavestea.com/cdn/shop/files/Latte_Mix_b400f40c-730f-4122-9058-cfc4e5bf8faf.webp?v=1771389945&width=600"
+                  alt="Nice Chai Tea Latte Mix"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Nice Chai Tea Latte Mix</h3>
+                <p class="product-price">From $12.95</p>
+                <p class="product-desc">
+                  Our Nice Chai is a not too sweet, not too spicy, powdered
+                  latte mix meant for making tea lattes simple.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="product-card">
+              <div class="product-media media-peach">
+                <span class="product-badge">TEA SACHETS</span>
+                <div class="product-rating">
+                  <i class="ri-star-fill" aria-hidden="true"></i>
+                  <span>4.79 (108)</span>
+                </div>
+                <button class="product-add" type="button">
+                  <span class="product-add-icon">+</span>
+                  <span class="product-add-text">Add</span>
+                </button>
+                <img
+                  src="https://www.twoleavestea.com/cdn/shop/files/organic_high_mountain_chai_tea_sachet_featured.webp?v=1771578289&width=750.0"
+                  alt="Organic Mountain High Chai Tea"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Organic Mountain High Chai Tea</h3>
+                <p class="product-price">From $11.95</p>
+                <p class="product-desc">
+                  An ode to our Rocky Mountain roots, our organic Mountain High
+                  Chai takes your tastebuds down a spice-filled ski slope.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="product-card">
+              <div class="product-media media-ice">
+                <span class="product-badge">NAKED SACHETS</span>
+                <button class="product-add" type="button">
+                  <span class="product-add-icon">+</span>
+                  <span class="product-add-text">Add</span>
+                </button>
+                <img
+                  src="https://www.twoleavestea.com/cdn/shop/files/Naked_Tea.webp?v=1771401766&width=600"
+                  alt="Organic Earl Grey - 50 Naked Tea Sachets"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">
+                  Organic Earl Grey - 50 Naked Tea Sachets
+                </h3>
+                <p class="product-price">$21.95</p>
+                <p class="product-desc">
+                  Earl Grey's distinctive aroma comes from bergamot - a citrus
+                  fruit about the size of an orange but yellow-green and
+                  slightly pear-shaped.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div
+          class="swiper-button-prev best-sellers-prev"
+          aria-label="Previous slide"
+        ></div>
+        <div
+          class="swiper-button-next best-sellers-next"
+          aria-label="Next slide"
+        ></div>
+      </div>
+      <div class="best-sellers-controls">
+        <div class="swiper-pagination best-sellers-pagination"></div>
+        <a class="best-sellers-button" href="#">Explore All Teas</a>
+      </div>
+    </section>
+
+    <section class="discover-section" aria-label="Discover teas">
+      <div class="discover-badge-container">
+        <span class="discover-badge">DISCOVER</span>
+      </div>
+      <h2 class="discover-title">
+        Let's find a cup that fits the <em>moment.</em> What are you searching
+        for?
+      </h2>
+      <input
+        class="discover-input"
+        type="text"
+        placeholder="green tea"
+        aria-label="Search teas"
+      />
+      <p class="vibe-label">OR EXPLORE BY VIBE...</p>
+      <div class="vibe-tags">
+        <button class="vibe-tag">A Sweet Treat</button>
+        <button class="vibe-tag">Evening Unwind</button>
+        <button class="vibe-tag">Focused & Clear</button>
+        <button class="vibe-tag">Caffeine!</button>
+        <button class="vibe-tag">Caffeine-Free</button>
+        <button class="vibe-tag">Ceremony-Worthy</button>
+        <button class="vibe-tag">Whole Leaf</button>
+        <button class="vibe-tag">Over Ice</button>
+        <button class="vibe-tag">Lattes</button>
+        <button class="vibe-tag">Black Tea</button>
+        <button class="vibe-tag">Green Tea</button>
+        <button class="vibe-tag">Herbal Tea</button>
+        <button class="vibe-tag">Organic</button>
+        <button class="vibe-tag">Barista Favorite</button>
+        <button class="vibe-tag">Calm & Cozy</button>
+        <button class="vibe-tag">Fruit Forward</button>
+      </div>
+    </section>
+    <section class="our-origin-section">
+      <div class="our-origin-title">
+        <div class="our-origin-badge-container">
+          <span class="our-origin-badge">OUR ORIGIN</span>
+        </div>
+        <h2 class="our-origin-heading">born in<br />colorado</h2>
+      </div>
+      <div class="our-origin-content">
+        <p>
+          Our founder, Richard, started Two Leaves and a Bud in pursuit of a
+          truly great cup. Two decades later, that same care and curiosity guide
+          everything we make.
+        </p>
+      </div>
+      <div class="our-origin-cta">
+        <div class="our-story-vectors">
+          <div class="vector-img">
+            <img
+              class="vector-left"
+              src="https://www.twoleavestea.com/cdn/shop/files/Quality_without_pretense.svg?v=1773116402&width=58"
+              alt=""
+            />
+            <p>Quality, Without Pretense</p>
+          </div>
+          <div class="vector-img">
+            <img
+              class="vector-center"
+              src="https://www.twoleavestea.com/cdn/shop/files/care_for_ppl_1.svg?v=1773116330&width=57"
+              alt=""
+            />
+            <p>Care for People</p>
+          </div>
+          <div class="vector-img">
+            <img
+              class="vector-right"
+              src="https://www.twoleavestea.com/cdn/shop/files/transparent_sourcing.svg?v=1773116421&width=48"
+              alt=""
+            />
+            <p>Transparent Sourcing</p>
+          </div>
+        </div>
+
+        <a class="our-story-button" href="#">Our Story</a>
+      </div>
+    </section>
+    <section class="reviews-section">
+      <div class="reviews-header">
+        <span class="reviews-badge">REVIEWS</span>
+        <h2 class="reviews-heading">
+          Loved by tea people <em>everywhere.</em><br />
+          Here's what they're saying.
+        </h2>
+      </div>
+
+      <div class="reviews-swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div
+              class="review-card"
+              style="--card-bg: #F5AF8A; --card-footer-bg: #EA6D44"
+            >
+              <div class="review-quote">"The right amount of spice."</div>
+              <div class="review-author">Angelina R.</div>
+              <div class="review-footer">
+                <div class="review-img">
+                  <img
+                    src="https://www.twoleavestea.com/cdn/shop/files/Organic-Mtn-High-Chai-R15-angle_square_KO_1_2.png?v=1770086173&width=144"
+                    alt="Organic Mountain High Chai"
+                  />
+                </div>
+                <div class="vertical-line"></div>
+                <span class="review-product">ORGANIC MOUNTAIN HIGH CHAI</span>
+                <button class="review-shop-btn">Shop</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="review-card"
+              style="--card-bg: #ABDF74; --card-footer-bg: #73BC25"
+            >
+              <div class="review-quote">
+                "This drink is incredibly refreshing, especially when served
+                over ice. It's light, crisp, and instantly cooling, making it
+                perfect for a quick refresh any time of day."
+              </div>
+              <div class="review-author">Harrison G.</div>
+              <div class="review-footer">
+                <div class="review-img">
+                  <img
+                    src="https://www.twoleavestea.com/cdn/shop/files/Organic-Mtn-High-Chai-R15-angle_square_KO_1.png?v=1770085601&width=144"
+                    alt="Organic Mountain High Chai"
+                  />
+                </div>
+                <div class="vertical-line"></div>
+                <span class="review-product">ORGANIC MATCHA MINT</span>
+                <button class="review-shop-btn">Shop</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="review-card"
+              style="--card-bg: #FFD265; --card-footer-bg: #FFB500"
+            >
+              <div class="review-quote">
+                "One sip and you can feel the difference— clean energy, rich
+                flavor, and all the good stuff your body loves. Literally liquid
+                GOLD."
+              </div>
+              <div class="review-author">Harrison G.</div>
+              <div class="review-footer">
+                <div class="review-img">
+                  <img
+                    src="https://www.twoleavestea.com/cdn/shop/files/Organic-Mtn-High-Chai-R15-angle_square_KO_1_1.png?v=1770085950&width=144"
+                    alt="Organic Mountain High Chai"
+                  />
+                </div>
+                <div class="vertical-line"></div>
+                <span class="review-product">TWO ROOTS GOLDEN LATTE MIX</span>
+                <button class="review-shop-btn">Shop</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="review-card"
+              style="--card-bg: #ADE674; --card-footer-bg: #8BC045"
+            >
+              <div class="review-quote">"Soo tasty and energizing."</div>
+              <div class="review-author">Gracie M.</div>
+              <div class="review-footer">
+                <div class="review-img">
+                  <img
+                    src="https://www.twoleavestea.com/cdn/shop/files/Organic-Mtn-High-Chai-R15-angle_square_KO_1_3.png?v=1770086264&width=144"
+                    alt="Organic Mountain High Chai"
+                  />
+                </div>
+                <div class="vertical-line"></div>
+                <span class="review-product">ORGANIC TROPICAL GREEN TEA</span>
+                <button class="review-shop-btn">Shop</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="review-card"
+              style="--card-bg: #D9C2E1; --card-footer-bg: #C790DB"
+            >
+              <div class="review-quote">"The perfect start to my day."</div>
+              <div class="review-author">Jorge F.</div>
+              <div class="review-footer">
+                <div class="review-img">
+                  <img
+                    src="https://www.twoleavestea.com/cdn/shop/files/Organic-Mtn-High-Chai-R15-angle_square_KO_1_4.png?v=1770086316&width=144"
+                    alt="Organic Mountain High Chai"
+                  />
+                </div>
+                <div class="vertical-line"></div>
+                <span class="review-product">JASMINE PETAL</span>
+                <button class="review-shop-btn">Shop</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const announcementBar = document.querySelector(".announcement-bar");
+      const navbar = document.querySelector(".navbar");
+
+      const updateStickyState = () => {
+        if (!announcementBar || !navbar) {
+          return;
+        }
+
+        const threshold = announcementBar.offsetHeight;
+        navbar.classList.toggle("is-sticky", window.scrollY > threshold);
+      };
+
+      window.addEventListener("scroll", updateStickyState);
+      window.addEventListener("load", updateStickyState);
+
+      new Swiper(".best-sellers-swiper", {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".best-sellers-next",
+          prevEl: ".best-sellers-prev",
+        },
+        pagination: {
+          el: ".best-sellers-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+          480: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        },
+      });
+
+      new Swiper(".reviews-swiper", {
+        slidesPerView: 1.2,
+        spaceBetween: 16,
+        breakpoints: {
+          640: { slidesPerView: 2.2 },
+          1024: { slidesPerView: 4.2 },
+        },
+      });
+    </script>
   </body>
 </html>
