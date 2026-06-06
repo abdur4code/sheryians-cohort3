@@ -1655,6 +1655,16 @@ body {
   line-height: 1.8;
 }
 
+.footer-bottom-copy a {
+  color:#2a2857;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom-copy a:hover {
+  color:#318aff;
+}
 /* ============================ Responsive Styles ==================== */
 @media (max-width: 1040px) {
   .nav-left a,
