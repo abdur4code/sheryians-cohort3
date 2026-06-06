@@ -1025,6 +1025,19 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.design-for-ease {
+  width: 160px;
+  position: absolute;
+  top: 20px;
+  right: 100px;
+}
+
+.design-for-ease img {
+  width: 100%;
 }
 
 .chai-heading {
@@ -1149,6 +1162,500 @@ body {
   letter-spacing: 0.02em;
 }
 
+/* =============tea journal section================= */
+.tea-journal-section {
+  background-color: #f5f0e1;
+  padding: 70px 0px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.tea-journal-heading {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: flex-start;
+  padding: 40px 0;
+  margin-bottom: 60px;
+}
+
+.journal-badge {
+  font-family: "Figtree", serif;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 800;
+  font-size: 2.5rem;
+  letter-spacing: -0.01em;
+  color: #1f1b12;
+  background-color: #f2b62f;
+  border: 1.5px solid #1f1b12;
+  border-radius: 6px;
+  padding: 0 6px;
+  margin-bottom: 32px;
+  transform: rotate(-2deg);
+}
+
+.tea-journal-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 3rem;
+  color: #1f1b12;
+}
+
+.tea-journal-swiper {
+  width: 100%;
+  padding: 0px 30px !important;
+  padding-bottom: 80px !important;
+  overflow: visible;
+}
+
+.tea-journal-section .swiper-slide {
+  height: auto;
+}
+
+.tea-journal-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 0;
+  padding-bottom: 120%;
+  position: relative;
+  border: 1.5px solid #1f1b12;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.tea-journal-card > * {
+  position: absolute;
+  width: 100%;
+}
+
+.tea-journal-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+  background-color: #2a2857;
+}
+
+.tea-journal-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: #c8d8e8;
+  padding: 0 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+  color: #1f1b12;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.tea-journal-media.media-illustration {
+  background-color: #2a2857;
+}
+
+.tea-journal-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tea-journal-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tea-journal-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #ffffff;
+  border: 1.5px solid #1f1b12;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-family: "Figtree", serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  padding: 4px 8px;
+  z-index: 1;
+  text-transform: uppercase;
+  color: #1f1b12;
+}
+
+.tea-journal-section .swiper-button-prev,
+.tea-journal-section .swiper-button-next {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #1f1b12;
+  color: #1f1b12;
+  top: 45%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: opacity 0.3s ease;
+}
+
+.tea-journal-section .swiper-button-prev {
+  left: 6px;
+}
+
+.tea-journal-section .swiper-button-next {
+  right: 6px;
+}
+
+.tea-journal-section .swiper-button-prev::after,
+.tea-journal-section .swiper-button-next::after {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f1b12;
+}
+
+.tea-journal-section .swiper-button-prev.swiper-button-disabled,
+.tea-journal-section .swiper-button-next.swiper-button-disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tea-journal-pagination {
+  position: relative;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.tea-journal-pagination .swiper-pagination-bullet {
+  width: 28px;
+  height: 4px;
+  border-radius: 999px;
+  background-color: #1f1b12;
+  opacity: 0.2;
+}
+
+.tea-journal-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #1f1b12;
+}
+
+.tea-journal-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 40px;
+  border-radius: 999px;
+  background-color: #2a2857;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  margin-top: 40px;
+}
+/* ===============great-tea-section=============== */
+.great-tea-section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.great-tea-section img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  top: 0;
+}
+
+.great-tea-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 85%;
+  width: 28%;
+  background-color: #f26412;
+  border: 1px solid #1f1b12;
+  border-radius: 16px;
+  padding: 48px 36px;
+  z-index: 4;
+}
+
+.great-tea-title {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: clamp(1.8rem, 2.8vw, 3.2rem);
+  color: #f5f0e1;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.great-tea-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.great-tea-para {
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  color: #f5f0e1;
+  line-height: 1.5;
+}
+
+.great-tea-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  border-radius: 999px;
+  background-color: #f5f0e1;
+  color: #1f1b12;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  border: 1px solid #1f1b12;
+  width: fit-content;
+}
+
+/* ============================== Footer ============================== */
+.site-footer {
+  background-color: #c0dbff;
+  width: 100%;
+  padding: 40px 20px;
+  padding-bottom: 100px;
+}
+
+.newsletter-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 80px;
+}
+
+.newsletter-copy {
+  flex: 0 1 420px;
+}
+
+.newsletter-copy h2 {
+  font-family: "Figtree", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1f1b12;
+  margin-bottom: 14px;
+}
+
+.newsletter-copy p {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #1f1b12;
+  max-width: 420px;
+}
+
+.newsletter-form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.newsletter-input {
+  width: 360px;
+  max-width: 100%;
+  border: 1.5px solid #1f1b12;
+  border-radius: 999px;
+  padding: 12px 24px;
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #1f1b12;
+  outline: none;
+}
+
+.newsletter-input::placeholder {
+  color: #a4a4a4;
+}
+
+.newsletter-button {
+  border: 1.5px solid #2a2857;
+  border-radius: 999px;
+  padding: 12px 32px;
+  background-color: #2a2857;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.newsletter-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.newsletter-socials a {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid #1f1b12;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #1f1b12;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.newsletter-socials a i {
+  font-size: 20px;
+}
+
+.newsletter-socials a:hover {
+  background-color: #1f1b12;
+  color: #c8ddf0;
+}
+
+.footer-panel {
+  background-color: #2a2857;
+  border-radius: 16px;
+  padding: 48px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 32px 28px;
+}
+
+.footer-column {
+  min-width: 0;
+}
+
+.footer-heading {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 12px;
+  display: block;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer-icon {
+  display: none;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  line-height: 2;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #a0a8c8;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  line-height: 2;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-partners {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+}
+
+.footer-partners .footer-heading {
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  background-color: #c0dbff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-bottom-illustration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.footer-bottom-logo {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  z-index: 2;
+}
+
+.footer-bottom-copy {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1f1b12;
+  white-space: nowrap;
+  z-index: 2;
+  line-height: 1.8;
+}
+
+/* ============================ Responsive Styles ==================== */
 @media (max-width: 1040px) {
   .nav-left a,
   .nav-right a {
@@ -1165,6 +1672,77 @@ body {
 
   .hero-title {
     font-size: clamp(2.2rem, 4vw, 2.8rem);
+  }
+  .tea-journal-card {
+    padding-bottom: 130%;
+  }
+
+  .tea-journal-footer {
+    height: 70px;
+    font-size: 0.8rem;
+    bottom: 0;
+  }
+
+  .tea-journal-media {
+    bottom: 70px;
+  }
+  .great-tea-section {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .great-tea-section img {
+    position: relative;
+    height: 50vw;
+    min-height: 240px;
+  }
+
+  .great-tea-container {
+    position: relative;
+    top: unset;
+    transform: none;
+    left: unset;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    padding: 40px 24px;
+    gap: 32px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .great-tea-button {
+    width: 100%;
+    justify-content: center;
+  }
+  .great-tea-title {
+    font-size: 2.25rem;
+    text-align: center;
+  }
+  .great-tea-para {
+    font-size: 1.1rem;
+  }
+
+  .newsletter-strip {
+    padding: 36px 40px;
+    gap: 24px;
+  }
+
+  .footer-panel {
+    padding: 40px 28px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-partners {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom-logo {
+    width: 240px;
   }
 }
 
@@ -1287,6 +1865,12 @@ body {
     text-align: center;
   }
 
+  .design-for-ease {
+    width: 120px;
+    top: 10px;
+    right: 10px;
+  }
+
   .chai-card-img {
     width: 100%;
     padding-bottom: 0;
@@ -1315,5 +1899,126 @@ body {
 
   .chai-card-content {
     padding-bottom: 40px;
+  }
+
+  /* ====================tea journal section================= */
+  .tea-journal-heading {
+    align-items: center;
+  }
+  .tea-journal-heading h2 {
+    font-size: 2rem;
+  }
+  /* ==================footer================ */
+  .newsletter-copy h2 {
+    font-size: 1.5rem;
+  }
+  .newsletter-copy p {
+    font-size: 1.3rem;
+  }
+  .newsletter-strip {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 40px 20px 24px;
+    gap: 18px;
+  }
+
+  .newsletter-copy {
+    flex: initial;
+  }
+
+  .newsletter-copy p {
+    max-width: none;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .newsletter-input,
+  .newsletter-button {
+    width: 100%;
+  }
+
+  .newsletter-socials {
+    margin-top: 2px;
+  }
+
+  .footer-panel {
+    padding: 16px 16px 8px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .footer-column {
+    border-bottom: 1px solid rgba(160, 168, 200, 0.18);
+  }
+
+  .footer-column:last-child {
+    border-bottom: 0;
+  }
+
+  .footer-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 0;
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+
+  .footer-icon {
+    display: inline-flex;
+    font-size: 22px;
+    transition: transform 0.2s ease;
+  }
+
+  .footer-column.is-open .footer-icon {
+    transform: rotate(180deg);
+  }
+
+  .footer-links {
+    display: none;
+    padding-bottom: 16px;
+  }
+
+  .footer-column.is-open .footer-links {
+    display: block;
+  }
+
+  .footer-links li:last-child {
+    margin-bottom: 0;
+  }
+
+  .footer-partners {
+    margin-top: 0;
+  }
+  .footer-bottom-logo {
+    width: 160px;
+    top: 24px;
+  }
+
+  .footer-bottom-copy {
+    bottom: 18px;
+  }
+  .footer-bottom {
+    min-height: 300px;
+  }
+
+  .footer-bottom-logo {
+    width: 160px;
+    top: 20px;
+  }
+
+  .footer-bottom-copy {
+    font-size: 9px;
+    bottom: 16px;
   }
 }
