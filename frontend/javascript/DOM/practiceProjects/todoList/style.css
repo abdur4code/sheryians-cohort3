@@ -1,0 +1,283 @@
+:root {
+    --bg-color: #f4f6f8;
+    --app-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --danger-color: #ef4444;
+    --danger-hover: #dc2626;
+    --success-color: #10b981;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0f172a;
+    --app-bg: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-container {
+    background-color: var(--app-bg);
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.theme-btn:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-color);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.hidden {
+    display: none;
+}
+
+.input-area {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+#task-input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+#task-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+#add-btn {
+    padding: 0 1.25rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#add-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.2s, border-color 0.3s ease;
+}
+
+.task-item:hover {
+    background-color: var(--bg-color);
+}
+
+.task-text-container {
+    display: contents;
+}
+
+#cross-btn, #check-btn{
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.20rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+#cross-btn{
+    margin-left: 0.5rem;
+}
+
+#cross-btn:hover {
+    color: var(--danger-color);
+    background-color: rgba(239, 68, 68, 0.1);
+} 
+
+#check-btn:hover {
+    color: var(--success-color);
+    background-color: rgba(16, 185, 129, 0.1);
+}
+/* Custom Checkbox */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    margin-right: 1rem;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-container input:checked ~ .custom-checkbox {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.checkbox-container input:checked ~ .custom-checkbox::after {
+    content: "";
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    margin-bottom: 2px;
+}
+
+.task-text {
+    flex-grow: 1;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+/* Completed State */
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.task-item.completed {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+/* Actions (Edit & Delete) */
+.actions {
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.task-item:hover .actions {
+    opacity: 1;
+    visibility: visible;
+}
+
+.edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.edit-btn:hover {
+    color: var(--accent-color);
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+.delete-btn:hover {
+    color: var(--danger-color);
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+@media (max-width: 480px) {
+    .app-container {
+        margin: 0;
+        min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
