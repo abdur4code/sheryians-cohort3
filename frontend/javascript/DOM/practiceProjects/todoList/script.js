@@ -43,7 +43,7 @@ const taskList = document.querySelector('.task-list');
 const deleteBtn = document.querySelector('.delete-btn');
 
 
-const tasks = ["hello", "world"];
+const tasks = [];
 
 const taskRender = () => {
     for (let i = 0; i < tasks.length; i++) {

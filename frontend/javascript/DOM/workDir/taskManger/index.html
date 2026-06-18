@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal Task Manager</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <div class="header-title">
+            <div class="title-icon"></div>
+          <h1>Tasks</h1>
+        </div>
+        <div class="header-actions" style="display: flex; gap: 0.5rem">
+          <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+            <i class="ri-moon-line"></i>
+          </button>
+        </div>
+      </header>
+
+      <form id="task-form">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Enter a new task..."
+          required
+        />
+        <select id="task-category">
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Urgent">Urgent</option>
+        </select>
+        <button type="submit" id="add-btn">Add Task</button>
+      </form>
+
+      <div id="task-list"></div>
+      <div class="empty-list-box">
+        <div class="empty-list-img"></div>
+        <div class="empty-list-text">
+          <h2>No tasks yet!</h2>
+          <p>Add a task to get started.</p>
+        </div>
+      </div>
+    </div>
+    <div class="edu-modal">
+      <section class="edu-section pipeline-section">
+        <h2>Browser Rendering Pipeline</h2>
+
+        <div class="pipeline-flow">
+          <div class="flow-col">
+            <div class="card">HTML</div>
+            <i class="ri-arrow-down-line"></i>
+            <div class="card">Parsing</div>
+            <i class="ri-arrow-down-line"></i>
+            <div class="card">Tokenization</div>
+            <i class="ri-arrow-down-line"></i>
+            <div class="card dom-card">DOM Tree</div>
+          </div>
+
+          <div class="flow-col css-col">
+            <div class="card">CSS</div>
+            <i class="ri-arrow-down-line"></i>
+            <div class="card cssom-card">CSSOM Tree</div>
+          </div>
+        </div>
+
+        <div class="pipeline-merge">
+          <div class="merge-text">DOM Tree + CSSOM Tree</div>
+          <i class="ri-arrow-down-line"></i>
+        </div>
+
+        <div class="card render-tree">Render Tree</div>
+      </section>
+      <div id="propagation-demo">
+        <h2>Event Propagation Demo</h2>
+        <p>Open your browser console and click the "Child Button" below.</p>
+
+        <div id="grandparent" class="prop-box grandparent">
+          Grandparent
+          <div id="parent" class="prop-box parent">
+            Parent
+            <button id="child" class="prop-box child">Child Button</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
