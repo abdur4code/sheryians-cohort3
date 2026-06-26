@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#counter-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 80px;
+  width: 100%;
+}
+
+#counter-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#counter-display {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(142, 175, 245);
+  border: 2px solid transparent;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  user-select: none;
+}
+
+#counter-display h1{
+  font-size: 3.5rem;
+}
+
+#reset-btn {
+  padding: 4px 8px;
+  font-size: 1.15rem;
+  color: aliceblue;
+  background-color: rgb(196, 47, 6);
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+#btn-div{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+#increment, #decrement {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  aspect-ratio: 1;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#increment {
+  background-color: #c5e7be;
+  color: #2e5e25;
+}
+
+#decrement {
+  font-size: 2.25rem;
+  background-color: #efd0bd;
+  /* color: #ba5b20; */
+}
