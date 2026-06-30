@@ -2,11 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Viewport meta tag: required so mobile renders at true scale, not zoomed out -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ledgerly — Personal Finance Tracker</title>
+    <title>Document</title>
 
-    <!-- Fonts: Inter for UI text, IBM Plex Mono for monetary figures (tabular numerals) -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml;base64,PHN2ZwogICAgICAgICAgICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICAgICAgICAgIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiCiAgICAgICAgICAgIHdpZHRoPSIxMDI0IgogICAgICAgICAgICBoZWlnaHQ9IjEwMjQiCiAgICAgICAgICA+CiAgICAgICAgICAgIDxkZWZzPgogICAgICAgICAgICAgIDxjbGlwUGF0aCBpZD0ic3F1aXJjbGUtY2xpcCI+CiAgICAgICAgICAgICAgICA8cmVjdCB3aWR0aD0iMTAyNCIgaGVpZ2h0PSIxMDI0IiByeD0iMjI1IiAvPgogICAgICAgICAgICAgIDwvY2xpcFBhdGg+CiAgICAgICAgICAgIDwvZGVmcz4KCiAgICAgICAgICAgIDxyZWN0IHdpZHRoPSIxMDI0IiBoZWlnaHQ9IjEwMjQiIHJ4PSIyMjUiIGZpbGw9IiM0RjQ2RTUiIC8+CgogICAgICAgICAgICA8cmVjdAogICAgICAgICAgICAgIHg9IjI0MiIKICAgICAgICAgICAgICB5PSI1NDAiCiAgICAgICAgICAgICAgd2lkdGg9IjE1MCIKICAgICAgICAgICAgICBoZWlnaHQ9IjIyMCIKICAgICAgICAgICAgICByeD0iMTYiCiAgICAgICAgICAgICAgZmlsbD0iI0ZGRkZGRiIKICAgICAgICAgICAgLz4KCiAgICAgICAgICAgIDxyZWN0CiAgICAgICAgICAgICAgeD0iNDM3IgogICAgICAgICAgICAgIHk9IjQwMCIKICAgICAgICAgICAgICB3aWR0aD0iMTUwIgogICAgICAgICAgICAgIGhlaWdodD0iMzYwIgogICAgICAgICAgICAgIHJ4PSIxNiIKICAgICAgICAgICAgICBmaWxsPSIjRkZGRkZGIgogICAgICAgICAgICAvPgoKICAgICAgICAgICAgPHJlY3QKICAgICAgICAgICAgICB4PSI2MzIiCiAgICAgICAgICAgICAgeT0iMjYwIgogICAgICAgICAgICAgIHdpZHRoPSIxNTAiCiAgICAgICAgICAgICAgaGVpZ2h0PSI1MDAiCiAgICAgICAgICAgICAgcng9IjE2IgogICAgICAgICAgICAgIGZpbGw9IiMxNkEzNEEiCiAgICAgICAgICAgIC8+CgogICAgICAgICAgICA8cGF0aAogICAgICAgICAgICAgIGQ9Ik0gNzA3IDMxMCAKICAgICAgICAgICBMIDY2MCAzOTAgCiAgICAgICAgICAgTCA2OTIgMzkwIAogICAgICAgICAgIEwgNjkyIDc2MCAKICAgICAgICAgICBMIDcyMiA3NjAgCiAgICAgICAgICAgTCA3MjIgMzkwIAogICAgICAgICAgIEwgNzU0IDM5MCBaIgogICAgICAgICAgICAgIGZpbGw9IiM0RjQ2RTUiCiAgICAgICAgICAgICAgc3Ryb2tlPSIjNEY0NkU1IgogICAgICAgICAgICAgIHN0cm9rZS13aWR0aD0iNiIKICAgICAgICAgICAgICBzdHJva2UtbGluZWpvaW49InJvdW5kIgogICAgICAgICAgICAvPgogICAgICAgICAgPC9zdmc+"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,8 +18,8 @@
     />
 
     <!-- ================Style code=================  -->
-
     <style>
+      /* CSS styles here */
       :root {
         --bg: #f7f8fb;
         --surface: #ffffff;
@@ -41,7 +44,7 @@
 
         --sky: #268ddc;
         --sky-deep: #227de4;
-        --sky-soft: #ecf5fd;
+        --sky-soft: #a0c1f6;
 
         --radius-lg: 16px;
         --radius-md: 12px;
@@ -58,6 +61,27 @@
 
         --navbar-h: 72px;
         --bottomnav-h: 72px;
+      }
+
+      /* Dark Mode Variables */
+      [data-theme="dark"] {
+        /*backgrounds */
+        --bg: #0f172a;
+        --surface: #1e293b;
+        --surface-muted: #334155;
+
+        /* Transparent borders */
+        --border: rgba(255, 255, 255, 0.08);
+
+        /* text */
+        --ink: #f8fafc;
+        --ink-soft: #94a3b8;
+        --ink-faint: #64748b;
+
+        /* Deeper shadows */
+        --shadow-card:
+          0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+        --shadow-nav: 0 4px 12px rgba(0, 0, 0, 0.3);
       }
 
       * {
@@ -190,35 +214,125 @@
         gap: 10px;
       }
 
+      /* ============================
+     NAVBAR PROFILE DROPDOWN
+  ============================ */
+      .nav-dropdown-container {
+        position: relative;
+      }
+
+      .nav-profile-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 10px 4px 4px;
+        background: transparent;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        transition:
+          background 0.2s ease,
+          border-color 0.2s ease;
+      }
+      .nav-profile-btn:hover {
+        background: var(--surface-muted);
+        border-color: var(--border);
+      }
+
+      .nav-profile-img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .nav-profile-name {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--ink);
+        white-space: nowrap;
+      }
+
+      .dropdown-icon {
+        width: 16px;
+        height: 16px;
+        color: var(--ink-soft);
+        transition: transform 0.2s ease;
+      }
+
+      .nav-dropdown-container.active .dropdown-icon {
+        transform: rotate(180deg);
+      }
+
+      /* The actual floating menu */
+      .nav-dropdown-menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        width: 200px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-pop);
+        padding: 8px 0;
+
+        /* Hidden state for animation */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.2s ease;
+        z-index: 250;
+      }
+
+      /* Shown state */
+      .nav-dropdown-container.active .nav-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--ink);
+        text-align: left;
+        transition: background 0.15s ease;
+      }
+      .dropdown-item:hover {
+        background: var(--surface-muted);
+      }
+      .dropdown-item svg {
+        width: 16px;
+        height: 16px;
+        color: var(--ink-soft);
+      }
+
+      .dropdown-divider {
+        height: 1px;
+        background: var(--border);
+        margin: 6px 0;
+      }
+
+      .dropdown-item.text-danger {
+        color: var(--red);
+      }
+      .dropdown-item.text-danger:hover {
+        background: var(--red-soft);
+      }
+      .dropdown-item.text-danger svg {
+        color: var(--red);
+      }
+
       .nav-actions {
         display: flex;
         align-items: center;
         gap: 10px;
-      }
-
-      /* Logout — kept outside .nav-actions so it stays visible on mobile too,
-     since .nav-actions hides at the 860px breakpoint */
-      .nav-logout {
-        width: 38px;
-        height: 38px;
-        border-radius: var(--radius-sm);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--ink-soft);
-        border: 1px solid var(--border);
-        transition:
-          background 0.15s ease,
-          color 0.15s ease;
-      }
-      .nav-logout svg {
-        width: 18px;
-        height: 18px;
-      }
-      .nav-logout:hover {
-        background: var(--red-soft);
-        color: var(--red);
-        border-color: var(--red-soft);
       }
 
       .btn {
@@ -239,11 +353,11 @@
       }
 
       .btn-income {
-        background: var(--green);
+        background: var(--indigo-deep);
         color: #fff;
       }
       .btn-income:hover {
-        background: var(--green-deep);
+        background: var(--indigo);
       }
 
       .btn-expense {
@@ -260,7 +374,7 @@
       }
 
       /* ============================
-     PAGE LAYOUT — single scrollable page, sections instead of separate pages
+     PAGE LAYOUT
   ============================ */
       .page-wrap {
         max-width: 1180px;
@@ -268,6 +382,56 @@
         padding: 32px 28px 64px;
       }
 
+      /* ============================
+     LAYOUT & DARK MODE
+  ============================ */
+      .dashboard-layout {
+        display: grid;
+        grid-template-columns: 7fr 3fr;
+        gap: 28px;
+        align-items: start;
+      }
+
+      .dashboard-left,
+      .dashboard-right {
+        min-width: 0;
+      }
+
+      .dashboard-left {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .dashboard-right {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      /* Theme Toggle Button */
+      .theme-toggle-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        color: var(--ink-soft);
+        background: var(--surface-muted);
+        transition: all 0.2s ease;
+      }
+      .theme-toggle-btn:hover {
+        color: var(--ink);
+        background: var(--border);
+      }
+
+      .danger-zone {
+        border: 1px solid var(--red-soft);
+      }
+      .text-danger {
+        color: var(--red);
+      }
       .section {
         scroll-margin-top: calc(var(--navbar-h) + 16px);
       }
@@ -298,7 +462,7 @@
       .page-date {
         font-family: var(--font-mono);
         font-size: 0.82rem;
-        color: var(--ink-faint);
+        color: var(--ink);
         background: var(--surface-muted);
         padding: 6px 12px;
         border-radius: 999px;
@@ -335,7 +499,7 @@
         --card-accent: var(--red);
       }
       .stat-card.is-count {
-        --card-accent: var(--ink-faint);
+        --card-accent: var(--sky-soft);
       }
 
       .stat-top {
@@ -361,20 +525,18 @@
         align-items: center;
         justify-content: center;
         font-size: 0.95rem;
-        background: var(--surface-muted);
-        color: var(--card-accent, var(--ink-soft));
       }
 
       .stat-value {
         font-size: 1.7rem;
-        font-weight: 700;
+        font-weight: 600;
         line-height: 1.1;
       }
       .stat-value.is-balance {
-        color: var(--indigo);
+        color: var(--ink);
       }
       .stat-value.is-income {
-        color: var(--green-deep);
+        color: var(--green);
       }
       .stat-value.is-expense {
         color: var(--red-deep);
@@ -460,6 +622,7 @@
         display: flex;
         align-items: center;
         gap: 8px;
+        flex-wrap: wrap;
       }
 
       .filter-btn {
@@ -635,6 +798,58 @@
       }
 
       /* ============================
+     GLOBAL EMPTY STATE
+  ============================ */
+      .global-empty-state {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+        width: 100%;
+      }
+
+      .empty-state-content {
+        text-align: center;
+        max-width: 420px;
+        padding: 48px 32px;
+        background: var(--surface);
+
+        border: 2px dashed var(--border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-card);
+      }
+
+      .empty-state-icon {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 20px;
+        background: var(--surface-muted);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ink-faint);
+      }
+
+      .empty-state-icon svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .empty-state-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 8px;
+      }
+
+      .empty-state-desc {
+        font-size: 0.95rem;
+        color: var(--ink-soft);
+        line-height: 1.5;
+        margin-bottom: 24px;
+      }
+      /* ============================
      MODAL — Add Income / Expense
   ============================ */
       .modal-overlay {
@@ -784,17 +999,27 @@
         background: var(--indigo-deep);
       }
 
+      .btn-danger {
+        flex: 1;
+        padding: 11px;
+        border-radius: var(--radius-sm);
+        background: var(--red);
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: background 0.15s ease;
+      }
+      .btn-danger:hover {
+        background: var(--red-deep);
+      }
       /* ============================
-     AUTH OVERLAY — Login / Register screen.
-     Sits on top of the whole app. Solid (not translucent) background so the
-     dashboard underneath is fully covered when a user isn't logged in.
-     Your JS controls #authOverlay's visibility based on whether
-     ledgerly_currentUser exists in localStorage.
+        AUTHENTICATION OVERLAY
   ============================ */
       .auth-overlay {
         position: fixed;
         inset: 0;
-        background: var(--bg); /* solid — fully hides the dashboard behind it */
+        background: var(--bg);
         z-index: 300;
         display: flex;
         align-items: center;
@@ -871,14 +1096,12 @@
           color 0.15s ease;
       }
 
-      /* JS toggles this when a tab is the active one */
       .auth-tab.active {
         background: var(--surface);
         color: var(--indigo);
         box-shadow: var(--shadow-card);
       }
 
-      /* JS shows one panel at a time by toggling this class */
       .auth-panel.auth-panel--hidden {
         display: none;
       }
@@ -891,7 +1114,7 @@
         font-size: 0.84rem;
         font-weight: 600;
         margin-bottom: 14px;
-        display: none; /* JS removes display:none and fills in a message on failure */
+        display: none;
       }
 
       .auth-submit {
@@ -997,14 +1220,14 @@
         padding-bottom: 16px;
       }
 
+      .settings-page--hidden {
+        display: none;
+      }
+
       .settings-header h1 {
         font-size: 24px;
         font-weight: 600;
         color: var(--ink);
-      }
-
-      .settings-page--hidden {
-        display: none;
       }
 
       .settings-header p {
@@ -1017,7 +1240,7 @@
         margin-bottom: 24px;
       }
 
-      .settings-form-group label {
+      .settings-input-label {
         display: block;
         font-size: 14px;
         font-weight: 500;
@@ -1048,12 +1271,47 @@
         flex-direction: column;
         gap: 16px;
         margin-bottom: 32px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
       }
 
       .settings-avatar-preview {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 16px;
+        flex-wrap: wrap; /* Added to keep elements flowing nicely */
+      }
+
+      .settings-avatar-preview label {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--ink);
+      }
+
+      /* Styling for the explicit file input */
+      #imageUpload {
+        font-family: var(--font-ui);
+        font-size: 14px;
+        color: var(--ink-soft);
+        cursor: pointer;
+      }
+
+      #imageUpload::file-selector-button {
+        background-color: var(--surface-muted);
+        border: 1px solid var(--border);
+        color: var(--ink);
+        font-weight: 500;
+        padding: 6px 12px;
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        font-size: 13px;
+        margin-right: 12px;
+        transition: background 0.2s;
+        font-family: var(--font-ui);
+      }
+
+      #imageUpload::file-selector-button:hover {
+        background-color: var(--border);
       }
 
       .settings-current-avatar {
@@ -1066,6 +1324,7 @@
       }
 
       .settings-avatar-btn {
+        display: inline-block;
         background-color: var(--surface);
         border: 1px solid var(--border);
         color: var(--ink);
@@ -1168,6 +1427,9 @@
         .summary-grid {
           grid-template-columns: repeat(2, 1fr);
         }
+        .dashboard-layout {
+          grid-template-columns: 1fr;
+        }
       }
 
       @media (max-width: 860px) {
@@ -1186,6 +1448,14 @@
       }
 
       @media (max-width: 640px) {
+        .nav-profile-name,
+        .dropdown-icon {
+          display: none;
+        }
+        .nav-profile-btn {
+          padding: 4px;
+          gap: 0;
+        }
         .summary-grid {
           grid-template-columns: 1fr;
         }
@@ -1211,10 +1481,156 @@
         .bottom-nav-item {
           width: 64px;
         }
+        .filter-span {
+          display: none;
+        }
+        footer {
+          font-size: 0.8rem;
+          flex-direction: column;
+        }
+      }
+
+      /* ============================
+     PIE CHART & CATEGORY UI
+  ============================ */
+      .chart-center-overlay {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .chart-center-icon {
+        font-size: 1.6rem;
+        margin-bottom: 2px;
+      }
+      .chart-center-label {
+        font-size: 0.8rem;
+        color: var(--ink-soft);
+        font-weight: 500;
+      }
+      .chart-center-value {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--ink);
+        font-family: var(--font-mono);
+      }
+
+      /* Category Breakdown List */
+      .category-list-header {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--ink);
+        margin: 32px 0 16px;
+      }
+      .category-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .category-list-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 14px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        transition: background 0.15s ease;
+      }
+      .category-list-item:hover {
+        background: var(--surface-muted);
+      }
+      .cat-item-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .cat-item-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+      }
+      .cat-item-details {
+        display: flex;
+        flex-direction: column;
+      }
+      .cat-item-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .cat-item-percent {
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-top: 2px;
+      }
+      .cat-item-right {
+        font-size: 1rem;
+        font-weight: 700;
+        font-family: var(--font-mono);
+        color: var(--ink);
+      }
+
+      .category-chip {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 0.76rem;
+        font-weight: 600;
+        background: transparent;
+        color: inherit;
+      }
+
+      /* Custom Scrollbar for the Breakdown list */
+      .chart-body::-webkit-scrollbar,
+      .table-scroll::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      .chart-body::-webkit-scrollbar-track,
+      .table-scroll::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .chart-body::-webkit-scrollbar-thumb,
+      .table-scroll::-webkit-scrollbar-thumb {
+        background: var(--border);
+        border-radius: 10px;
+      }
+      .chart-body::-webkit-scrollbar-thumb:hover,
+      .table-scroll::-webkit-scrollbar-thumb:hover {
+        background: var(--ink-faint);
+      }
+
+      footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        color: var(--ink-soft);
+        gap: 6px;
+        margin-bottom: 35px;
+      }
+      footer a {
+        color: var(--indigo);
+        text-decoration: underline dotted;
+        text-underline-offset: 3px;
+        transition: all 0.3s ease;
+      }
+      footer a:hover {
+        color: var(--indigo-deep);
       }
     </style>
   </head>
   <body>
+    <!-- ================navigation ============ -->
     <header class="navbar">
       <div class="nav-brand">
         <div class="mark">
@@ -1296,13 +1712,77 @@
 
       <div class="nav-right">
         <div class="nav-actions">
-          <button class="btn btn-income" onclick="openModal()">
-            <span class="btn-icon">＋</span><span>New Transaction</span>
+          <div class="page-date" id="todayDate">28 Jun 2026</div>
+        </div>
+        <div class="nav-dropdown-container" id="navDropdownContainer">
+          <button class="nav-profile-btn" id="navProfileBtn">
+            <img
+              src="https://api.dicebear.com/7.x/micah/svg?seed=Alex&backgroundColor=transparent"
+              alt="User Profile"
+              id="navProfileImg"
+              class="nav-profile-img"
+            />
+            <span id="navProfileName" class="nav-profile-name">Guest</span>
+            <svg
+              class="dropdown-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </button>
+
+          <div class="nav-dropdown-menu">
+            <button
+              class="dropdown-item"
+              onclick="
+                navigation('settings');
+                closeDropdown();
+              "
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              Profile Settings
+            </button>
+
+            <div class="dropdown-divider"></div>
+
+            <button class="dropdown-item text-danger" id="logoutBtn">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+              Log Out
+            </button>
+          </div>
         </div>
 
-        
-        <button class="nav-logout" id="logoutBtn" aria-label="Log out">
+        <button
+          class="theme-toggle-btn"
+          id="themeToggleBtn"
+          aria-label="Toggle theme"
+        >
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -1310,156 +1790,552 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
+            style="width: 18px; height: 18px"
           >
-            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-            <path d="M16 17l5-5-5-5" />
-            <path d="M21 12H9" />
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
         </button>
       </div>
     </header>
 
+    <!-- ==============main dashboard code================ -->
     <main class="page-wrap" id="main-page">
-      <section class="section" id="dashboard-section">
-        <div class="page-header">
+      <!-- =========Empty state code========== -->
+      <div
+        class="global-empty-state"
+        id="globalEmptyState"
+        style="display: none"
+      >
+        <div class="empty-state-content">
+          <div class="empty-state-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+              <path d="M12 12h.01"></path>
+              <path d="M17 12h.01"></path>
+              <path d="M7 12h.01"></path>
+            </svg>
+          </div>
+          <h2 class="empty-state-title">No transactions found</h2>
+          <p class="empty-state-desc">
+            Your dashboard is empty. Start tracking your finances by adding your
+            first transaction.
+          </p>
+          <button
+            class="btn btn-primary"
+            onclick="openModal()"
+            style="margin-top: 8px"
+          >
+            <span class="btn-icon">＋</span><span>Add First Transaction</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ============Container for hiding the dashboard when empty state is shown========= -->
+      <div id="dashboardLayout">
+        <!-- ============Page headings=========== -->
+        <div class="page-header" id="dashboardHeader">
           <div>
             <div class="page-title">Dashboard</div>
             <div class="page-subtitle">
               Here's where your money has been going.
             </div>
           </div>
-          <div class="page-date" id="todayDate">28 Jun 2026</div>
+          <button class="btn btn-income" onclick="openModal()">
+            <span class="btn-icon">＋</span><span>New Transaction</span>
+          </button>
         </div>
 
-        <div class="summary-grid">
+        <!-- =============Stats card code============== -->
+        <div class="summary-grid" id="summaryGrid">
           <div class="stat-card is-balance">
             <div class="stat-top">
               <span class="stat-label">Current Balance</span>
-              <span class="stat-icon">⬡</span>
+              <span class="stat-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  enable-background="new 0 0 64 64"
+                  viewBox="0 0 64 64"
+                  width="28"
+                  height="28"
+                >
+                  <path
+                    fill="#b5b3ff"
+                    d="M22.88,8.17l35.3,26.25c-1.97,2.66-1.42,6.42,1.24,8.4l-9.55,12.83c-2.66-1.97-6.42-1.42-8.39,1.24    L6.17,30.63c1.98-2.66,1.42-6.42-1.24-8.39L14.48,9.4C17.14,11.38,20.89,10.82,22.88,8.17z"
+                    class="svgShape color65bc6a-0 selectable"
+                  />
+                  <path
+                    fill="#5b53d0"
+                    d="M62.2 37.4c.44.33.53.96.2 1.4l-2.98 4.02c-2.66-1.98-3.21-5.74-1.24-8.4L62.2 37.4zM49.87 55.65l-2.98 4.02c-.33.44-.96.53-1.4.2l-4.01-2.98C43.45 54.23 47.21 53.68 49.87 55.65zM37.55 25.3c3.98 2.97 4.81 8.61 1.85 12.6-2.97 3.99-8.61 4.81-12.59 1.85-3.99-2.97-4.82-8.61-1.86-12.59C27.92 23.17 33.56 22.34 37.55 25.3z"
+                    class="svgShape color398f3e-1 selectable"
+                  />
+                  <path
+                    fill="#b5b3ff"
+                    d="M27.999 38.143c.179.133.389.198.596.198.306 0 .607-.139.803-.403l.849-1.142c.068.01.132.029.201.034.073.005.146.008.218.008 1.557 0 2.876-1.208 2.991-2.784.038-.526-.063-1.053-.293-1.526-.105-.216-.236-.419-.39-.604-.057-.075-.124-.143-.201-.2-.214-.16-.354-.393-.393-.657-.039-.264.027-.528.187-.742.159-.214.393-.354.657-.393.266-.038.528.028.743.188.143.106.251.243.321.404.035.081.059.167.072.253.081.547.591.922 1.135.844.546-.081.924-.588.844-1.135-.038-.259-.11-.512-.214-.753-.072-.167-.177-.315-.278-.465l.713-.959c.33-.443.238-1.069-.206-1.399-.442-.329-1.069-.238-1.399.206l-.705.948c-.422-.131-.868-.177-1.316-.11-.793.117-1.493.535-1.971 1.178-.958 1.289-.726 3.101.504 4.109.038.051.071.105.099.162.077.159.11.33.097.508-.04.55-.534.966-1.069.925-.267-.019-.51-.141-.684-.343-.175-.202-.261-.46-.241-.726.04-.551-.375-1.03-.925-1.07-.572-.037-1.03.375-1.07.925-.058.799.199 1.573.724 2.179.018.021.04.035.058.055l-.66.888C27.463 37.188 27.555 37.814 27.999 38.143zM6.17 30.63l27.82 20.69h-.01L6.79 42.67c1.01-3.16-.74-6.53-3.9-7.54L4 31.64l.67-2.12L6.17 30.63z"
+                    class="svgShape color65bc6a-2 selectable"
+                  />
+                  <polygon
+                    fill="#655ae0"
+                    points="33.98 51.32 24.21 48.21 4.17 33.31 3.6 32.89 4 31.64 4.67 29.52 6.17 30.63"
+                    class="svgShape color398f3e-3 selectable"
+                  />
+                  <path
+                    fill="#b5b3ff"
+                    d="M36.25,53H10c0-3.31-2.69-6-6-6v-5.22l2.79,0.89l27.19,8.65h0.01L36.25,53z"
+                    class="svgShape color65bc6a-4 selectable"
+                  />
+                  <polygon
+                    fill="#635cca"
+                    points="36.25 53 29.83 53 6.79 45.67 4 44.78 4 41.78 6.79 42.67 33.98 51.32 33.99 51.32"
+                    class="svgShape color29752b-5 selectable"
+                  />
+                  <path
+                    fill="#4338ca"
+                    d="M60,47v5c0,0.55-0.45,1-1,1h-3.02l0.28-0.89l1.49-4.67C58.44,47.15,59.2,47,60,47z"
+                    class="svgShape color236823-6 selectable"
+                  />
+                  <path
+                    fill="#4338ca"
+                    d="M60,42.03V47c-0.8,0-1.56,0.15-2.25,0.44l1.32-4.15v-0.01l0.35-0.46L60,42.03z"
+                    class="svgShape color29752b-7 selectable"
+                  />
+                  <path
+                    fill="#b5b3ff"
+                    d="M59.07,43.29l-1.32,4.15l-1.49,4.67c-0.71-0.23-1.44-0.31-2.15-0.27c-0.56,0.03-1.11,0.14-1.64,0.32   L59.07,43.29z"
+                    class="svgShape color65bc6a-8 selectable"
+                  />
+                  <path
+                    fill="#655ae0"
+                    d="M56.26 52.11L55.98 53l-1.24 3.88c-.16.52-.73.81-1.25.65l-4.05-1.29.43-.59 2.6-3.49c.53-.18 1.08-.29 1.64-.32C54.82 51.8 55.55 51.88 56.26 52.11zM60 26v4.22l-1.99-.64-2.71-.86h-.01C54.48 27.7 54 26.41 54 25h5C59.55 25 60 25.45 60 26z"
+                    class="svgShape color398f3e-9 selectable"
+                  />
+                  <path
+                    fill="#b5b3ff"
+                    d="M55.29,28.72l-8.33-2.65h-0.01L45.52,25H54C54,26.41,54.48,27.7,55.29,28.72z"
+                    class="svgShape color65bc6a-10 selectable"
+                  />
+                  <polygon
+                    fill="#655ae0"
+                    points="10.67 14.52 8.54 17.39 8.54 17.38 9.56 14.17"
+                    class="svgShape color398f3e-11 selectable"
+                  />
+                  <path
+                    fill="#655ae0"
+                    d="M10 53H5c-.55 0-1-.45-1-1v-5C7.31 47 10 49.69 10 53zM2.89 35.13c3.16 1.01 4.91 4.38 3.9 7.54L4 41.78l-1.98-.63c-.52-.16-.81-.73-.65-1.25L2.89 35.13zM22.88 8.16v.01c-1.99 2.65-5.74 3.21-8.4 1.23l2.99-4.01c.32-.45.95-.54 1.39-.21L22.88 8.16zM4.93 22.24c2.66 1.97 3.22 5.73 1.24 8.39l-4.01-2.98c-.45-.33-.54-.96-.21-1.4L4.93 22.24z"
+                    class="svgShape color398f3e-12 selectable"
+                  />
+                  <path
+                    fill="#b5b3ff"
+                    d="M57.98,29.67c-0.43,1.17-0.5,3.04-0.23,4.42l-10.79-8.02l8.33,2.65h0.01l2.71,0.86L57.98,29.67z"
+                    class="svgShape color65bc6a-13 selectable"
+                  />
+                  <path
+                    fill="#655ae0"
+                    d="M57.75 34.09c-.27-1.38-.2-3.25.23-4.42l.03-.09L60 30.22l1.98.63c.52.16.81.73.65 1.25l-1.45 4.54-3-2.22L57.75 34.09zM59.07 43.29l-1.32 4.15-1.49 4.67c-.71-.23-1.44-.31-2.15-.27-.56.03-1.11.14-1.64.32L59.07 43.29z"
+                    class="svgShape color398f3e-14 selectable"
+                  />
+                  <path
+                    fill="#4338ca"
+                    d="M54.11,51.84c-0.56,0.03-1.11,0.14-1.64,0.32l-1.73,2.33l-0.87,1.16l-0.43,0.59l3.23,1.03l0.82,0.26  c0.52,0.16,1.09-0.13,1.25-0.65L55.98,53l0.1-0.32l0.18-0.57C55.55,51.88,54.82,51.8,54.11,51.84z"
+                    class="svgShape color29752b-15 selectable"
+                  />
+                  <path
+                    fill="#4338ca"
+                    d="M56.34,29.05l-1.04-0.33h-0.01c-0.22-0.27-0.41-0.56-0.57-0.87L56.34,29.05z"
+                    class="svgShape color236823-16 selectable"
+                  />
+                  <path
+                    fill="#4338ca"
+                    d="M55.29,28.72l-8.33-2.65h-0.01L45.52,25h5.37l3.83,2.85C54.88,28.16,55.07,28.45,55.29,28.72z"
+                    class="svgShape color29752b-17 selectable"
+                  />
+                  <path
+                    fill="#655ae0"
+                    d="M57.63,31.32c0.05-0.41,0.11-0.81,0.2-1.16l-1.49-1.11l-1.04-0.33h-0.01l-8.33-2.65l10.06,7.48l0.73,0.54  C57.59,33.26,57.55,32.25,57.63,31.32z"
+                    class="svgShape color398f3e-18 selectable"
+                  />
+                  <polygon
+                    fill="#655ae0"
+                    points="61.09 36.57 61.29 36.3 61.18 36.64"
+                    class="svgShape color398f3e-19 selectable"
+                  />
+                  <path
+                    fill="#4338ca"
+                    d="M62.2,33.4l-4.02-2.98l-0.35-0.26c-0.09,0.35-0.15,0.75-0.2,1.16c-0.08,0.93-0.04,1.94,0.12,2.77l0.43,0.33  l2.91,2.15l0.2-0.27l0.92-2.89L62.2,33.4z"
+                    class="svgShape color29752b-20 selectable"
+                  /></svg
+              ></span>
             </div>
-            <div class="stat-value num is-balance" id="statBalance">
-              ₹43,650.00
-            </div>
+            <div class="stat-value num is-balance" id="statBalance">₹0.00</div>
             <div class="stat-foot">Income minus expenses</div>
           </div>
 
           <div class="stat-card is-income">
             <div class="stat-top">
               <span class="stat-label">Total Income</span>
-              <span class="stat-icon">↑</span>
+              <span class="stat-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 4.233 4.233"
+                  width="28"
+                  height="28"
+                >
+                  <g transform="matrix(1 0 0 1 73.404 -1.966)">
+                    <g transform="translate(0 .614)">
+                      <path
+                        fill="none"
+                        stroke="#16a34a"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width=".265"
+                        d="m -73.008825,4.6582612 0.541864,-0.7198655 c 0.212829,-0.284108 0.646612,-0.3634361 0.895538,-0.00608 l 0.100961,0.1426269 c 0.186308,0.2731178 0.607022,0.3582574 0.878464,-0.1118939 l 0.757726,-1.4670339"
+                        paint-order="markers fill stroke"
+                        class="svgStroke colorStroke000000-2 selectable"
+                      />
+                      <path
+                        fill="none"
+                        stroke="#16a34a"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width=".265"
+                        d="m -70.546287,2.6229312 0.539703,-0.1501147 c 0.137384,-0.036812 0.240825,-0.00577 0.279104,0.1318502 l 0.158619,0.5702817"
+                        paint-order="markers fill stroke"
+                        class="svgStroke colorStroke000000-3 selectable"
+                      />
+                    </g>
+                    <path
+                      fill="none"
+                      stroke="#16a34a"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width=".265"
+                      d="M -73.008825,4.2218322 V 2.8906474 c 0,-0.2931583 0.236009,-0.5291667 0.529167,-0.5291667 h 2.90297 m 0.0075,2.1414713 v 0.7689452 c 0,0.2931583 -0.236008,0.5291666 -0.529166,0.5291666 h -2.381242 c -0.293158,0 -0.529167,-0.2360083 -0.529167,-0.5291666"
+                      paint-order="markers fill stroke"
+                      class="svgStroke colorStroke000000-4 selectable"
+                    />
+                  </g></svg
+              ></span>
             </div>
-            <div class="stat-value num is-income" id="statIncome">
-              ₹75,500.00
-            </div>
-            <div class="stat-foot" id="incomeCount">5 income entries</div>
+            <div class="stat-value num is-income" id="statIncome">₹0.00</div>
+            <div class="stat-foot" id="incomeCount">0 income entries</div>
           </div>
 
           <div class="stat-card is-expense">
             <div class="stat-top">
               <span class="stat-label">Total Expense</span>
-              <span class="stat-icon">↓</span>
+              <span class="stat-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 4.233 4.233"
+                  width="28"
+                  height="28"
+                >
+                  <g transform="matrix(-1 0 0 -1 -69.173 6.196)">
+                    <g transform="translate(0 .614)">
+                      <path
+                        fill="none"
+                        stroke="#dc2626"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width=".265"
+                        d="m -73.008825,4.6582612 0.541864,-0.7198655 c 0.212829,-0.284108 0.646612,-0.3634361 0.895538,-0.00608 l 0.100961,0.1426269 c 0.186308,0.2731178 0.607022,0.3582574 0.878464,-0.1118939 l 0.757726,-1.4670339"
+                        paint-order="markers fill stroke"
+                        class="svgStroke colorStroke000000-2 selectable"
+                      />
+                      <path
+                        fill="none"
+                        stroke="#dc2626"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width=".265"
+                        d="m -70.546287,2.6229312 0.539703,-0.1501147 c 0.137384,-0.036812 0.240825,-0.00577 0.279104,0.1318502 l 0.158619,0.5702817"
+                        paint-order="markers fill stroke"
+                        class="svgStroke colorStroke000000-3 selectable"
+                      />
+                    </g>
+                    <path
+                      fill="none"
+                      stroke="#dc2626"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width=".265"
+                      d="M -73.008825,4.2218322 V 2.8906474 c 0,-0.2931583 0.236009,-0.5291667 0.529167,-0.5291667 h 2.90297 m 0.0075,2.1414713 v 0.7689452 c 0,0.2931583 -0.236008,0.5291666 -0.529166,0.5291666 h -2.381242 c -0.293158,0 -0.529167,-0.2360083 -0.529167,-0.5291666"
+                      paint-order="markers fill stroke"
+                      class="svgStroke colorStroke000000-4 selectable"
+                    />
+                  </g></svg
+              ></span>
             </div>
-            <div class="stat-value num is-expense" id="statExpense">
-              ₹31,850.00
-            </div>
-            <div class="stat-foot" id="expenseCount">8 expense entries</div>
+            <div class="stat-value num is-expense" id="statExpense">₹0.00</div>
+            <div class="stat-foot" id="expenseCount">0 expense entries</div>
           </div>
 
           <div class="stat-card is-count">
             <div class="stat-top">
               <span class="stat-label">Total Transactions</span>
-              <span class="stat-icon">≡</span>
+              <span class="stat-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 24"
+                  width="28"
+                  height="28"
+                >
+                  <path
+                    d="m17.12 21.857h-14.977v-6.428h-2.143v8.571h19.259v-8.571h-2.139zm-12.616-7.018.442-2.102 10.486 2.21-.442 2.09zm1.379-5.009.898-1.955 9.71 4.54-.898 1.942zm2.692-4.768 1.366-1.647 8.218 6.87-1.366 1.647zm5.313-5.062 6.388 8.585-1.716 1.286-6.386-8.585zm-9.616 19.701v-2.13h10.714v2.13z"
+                    fill="#a0c1f6"
+                    class="svgShape color000000-0 selectable"
+                  /></svg
+              ></span>
             </div>
-            <div class="stat-value num" id="statCount">13</div>
+            <div class="stat-value num" id="statCount">0</div>
             <div class="stat-foot">Logged this month</div>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-header">
+        <!-- ==============Charts section code================ -->
+        <div class="dashboard-layout">
+          <div class="dashboard-left">
+            <section class="section" id="dashboard-section">
+              <div class="card">
+                <div class="card-header">
+                  <div>
+                    <div class="card-title">Cash Flow</div>
+                    <div class="card-title-sub">Income vs. Expense</div>
+                  </div>
+                  <div class="legend">
+                    <span class="legend-item"
+                      ><span class="legend-dot income"></span>Income</span
+                    >
+                    <span class="legend-item"
+                      ><span class="legend-dot expense"></span>Expense</span
+                    >
+                  </div>
+                </div>
+                <div class="chart-body">
+                  <div class="chart-canvas-wrap">
+                    <canvas id="cashFlowChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- -------------right section of piechart---------->
+          <div class="dashboard-right">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Payment Breakdown</div>
+                  <div class="card-title-sub">Expenses by Category</div>
+                </div>
+              </div>
+
+              <div class="chart-body" style="height: 388px; overflow-y: auto">
+                <div
+                  style="
+                    position: relative;
+                    height: 230px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  <canvas id="categoryPieChart" style="z-index: 2"></canvas>
+
+                  <div class="chart-center-overlay">
+                    <div class="chart-center-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 64 64"
+                        width="30"
+                        height="30"
+                      >
+                        <defs>
+                          <linearGradient
+                            id="a"
+                            x1="35.87"
+                            x2="46.02"
+                            y1="22.76"
+                            y2="12.61"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop
+                              offset="0"
+                              stop-color="#4f46e5"
+                              class="svgShape stopColor54a5ff-2"
+                            />
+                            <stop
+                              offset="1"
+                              stop-color="#9099f2"
+                              class="svgShape stopColor8ad3fe-3"
+                            />
+                          </linearGradient>
+                          <linearGradient
+                            id="b"
+                            x1="16.54"
+                            x2="32.46"
+                            y1="31.96"
+                            y2="16.04"
+                            xlink:href="#a"
+                          />
+                          <linearGradient
+                            id="c"
+                            x1="29"
+                            x2="29"
+                            y1="61"
+                            y2="23"
+                            xlink:href="#a"
+                          />
+                        </defs>
+                        <path
+                          fill="url(#a)"
+                          d="M56.84 23.42 37.77 4.35a4.64 4.64 0 0 0-6.54 0l-6.18 6.18a1 1 0 0 0-.27.93 1 1 0 0 0 .65.72 2.64 2.64 0 0 1 .92.59l11.94 11.94A1 1 0 0 0 39 25h16a3.57 3.57 0 0 1 .89.1 1 1 0 0 0 .24 0 1 1 0 0 0 .71-1.71Z"
+                          class="svgShape colorgradient-6 selectable"
+                        />
+                        <path
+                          fill="url(#b)"
+                          d="M39.71 23.29 27.77 11.35a4.48 4.48 0 0 0-1.64-1 4.63 4.63 0 0 0-4.9 1L9.29 23.29a1 1 0 0 0-.21 1.09A1 1 0 0 0 10 25h29a1 1 0 0 0 .92-.62 1 1 0 0 0-.21-1.09Z"
+                          class="svgShape colorgradient-7 selectable"
+                        />
+                        <path
+                          fill="#4338ca"
+                          d="M54 23H11a4 4 0 0 0-4 4v30a4 4 0 0 0 4 4h43a6 6 0 0 0 6-6V29a6 6 0 0 0-6-6Z"
+                          class="svgShape color4795ea-8 selectable"
+                        />
+                        <path
+                          fill="url(#c)"
+                          d="M55 29v26a6 6 0 0 1-5.89 6H6.92A4 4 0 0 1 3 57V27a4 4 0 0 1 3.92-4h42.19A6 6 0 0 1 55 29Z"
+                          class="svgShape colorgradient-9 selectable"
+                        />
+                        <path
+                          fill="#4338ca"
+                          d="M60 36h-8a5 5 0 0 0-5 5v2a5 5 0 0 0 5 5h8a1 1 0 0 0 1-1V37a1 1 0 0 0-1-1Z"
+                          class="svgShape color4795ea-10 selectable"
+                        />
+                        <path
+                          fill="#eef0fd"
+                          d="M31 27h-8a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-2a3 3 0 0 0-3-3Zm1 5a1 1 0 0 1-1 1h-8a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1Z"
+                          class="svgShape colord7e9f7-11 selectable"
+                        />
+                        <circle
+                          cx="54"
+                          cy="42"
+                          r="2"
+                          fill="#eef0fd"
+                          class="svgShape colord7e9f7-12 selectable"
+                        />
+                        <path
+                          fill="#eef0fd"
+                          d="M10 23h2v38h-2zM14 23h2v38h-2z"
+                          class="svgShape colord7e9f7-13 selectable"
+                        />
+                      </svg>
+                    </div>
+                    <div class="chart-center-label">Total</div>
+                    <div class="chart-center-value" id="pieChartTotal">$0</div>
+                  </div>
+                </div>
+
+                <div class="category-list-header">By Category</div>
+                <div class="category-list" id="categoryListContainer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================Transactions Section================ -->
+        <section class="section" id="transactions-section">
+          <div class="page-header">
             <div>
-              <div class="card-title">Cash Flow</div>
-              <div class="card-title-sub">Income vs. Expense</div>
-            </div>
-            <div class="legend">
-              <span class="legend-item"
-                ><span class="legend-dot income"></span>Income</span
-              >
-              <span class="legend-item"
-                ><span class="legend-dot expense"></span>Expense</span
-              >
-            </div>
-          </div>
-          <div class="chart-body">
-            <div class="chart-canvas-wrap">
-              <canvas id="cashFlowChart"></canvas>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="transactions-section">
-        <div class="page-header">
-          <div>
-            <div class="page-title">Transactions</div>
-            <div class="page-subtitle">Every entry, in one place.</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">All Entries</div>
-            <div class="filter-row">
-              <button
-                class="filter-btn active"
-                id="fliterAll"
-                onclick="filterTransactions('all')"
-              >
-                All Types
-              </button>
-              <button
-                class="filter-btn"
-                id="fliterIncome"
-                onclick="filterTransactions('income')"
-              >
-                Income Only
-              </button>
-              <button
-                class="filter-btn"
-                id="fliterExpense"
-                onclick="filterTransactions('expense')"
-              >
-                Expense Only
-              </button>
+              <div class="page-title">Transactions</div>
+              <div class="page-subtitle">Every entry, in one place.</div>
             </div>
           </div>
 
-          <div class="table-scroll">
-            <table>
-              <thead>
-                <tr>
-                  <th class="col-date">Date</th>
-                  <th>Description</th>
-                  <th>Category</th>
-                  <th class="col-amount">Amount</th>
-                  <th class="col-action">Actions</th>
-                </tr>
-              </thead>
-              <tbody id="transactionsBody"></tbody>
-            </table>
-          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">All Entries</div>
+              <div class="filter-row">
+                <button class="filter-btn active" id="filterAll">
+                  All <span class="filter-span">Types</span>
+                </button>
+                <button class="filter-btn" id="filterIncome">
+                  Income <span class="filter-span">Only</span>
+                </button>
+                <button class="filter-btn" id="filterExpense">
+                  Expense <span class="filter-span">Only</span>
+                </button>
+                <button
+                  class="filter-btn"
+                  id="downloadCsvBtn"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    color: var(--ink);
+                    margin-left: 8px;
+                  "
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  CSV
+                </button>
+              </div>
+            </div>
 
-          <div class="empty-state" id="emptyState">
-            <div class="empty-icon">🗒️</div>
-            <div class="empty-title">No transactions yet</div>
-            <div class="empty-sub">
-              Add your first income or expense to see it here.
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="col-date">Date</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th class="col-amount">Amount</th>
+                    <th class="col-action">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="transactionsBody"></tbody>
+              </table>
+            </div>
+            <div class="empty-state" id="emptyState">
+              <div class="empty-icon">🗒️</div>
+              <div class="empty-title">No transactions yet</div>
+              <div class="empty-sub">
+                Add your first income or expense to see it here.
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
 
+    <!-- ================Settings Section================ -->
     <section class="settings settings-page--hidden" id="settings-section">
       <div class="settings-dashboard">
         <div class="settings-header">
@@ -1469,22 +2345,23 @@
 
         <form action="#" id="settingsForm">
           <div class="settings-avatar-section">
-            <label>Profile Picture</label>
-
             <div class="settings-avatar-preview">
               <label for="imageUpload">Select an image:</label>
+
               <input
                 type="file"
                 id="imageUpload"
                 name="profile_pic"
                 accept="image/*"
               />
+
               <img
                 src="https://api.dicebear.com/7.x/micah/svg?seed=Alex&backgroundColor=transparent"
                 alt="Current Avatar"
                 class="settings-current-avatar"
                 id="mainAvatar"
               />
+
               <div>
                 <button type="button" class="settings-avatar-btn">
                   Upload Custom Image
@@ -1527,29 +2404,29 @@
           </div>
 
           <div class="settings-form-group">
-            <label for="fullName">Full Name</label>
+            <label for="settingsName">Full Name</label>
             <input
               type="text"
               id="settingsName"
               class="settings-form-control"
-              placeholder="e.g. Jane Doe"
-              value="Jane Doe"
+              placeholder="e.g. Abdur Rahim"
+              value=""
             />
           </div>
 
           <div class="settings-form-group">
-            <label for="username">Username</label>
+            <label for="settingsUsername">Username</label>
             <input
               type="text"
               id="settingsUsername"
               class="settings-form-control"
-              placeholder="e.g. janedoe99"
-              value="janedoe99"
+              placeholder="e.g. abdur4code"
+              value=""
             />
           </div>
 
           <div class="settings-form-group">
-            <label for="currency">Currency Preference</label>
+            <label for="settingsCurrency">Currency Preference</label>
             <select
               id="settingsCurrency"
               name="currency_symbol"
@@ -1569,7 +2446,11 @@
           </div>
 
           <div class="settings-actions">
-            <button type="button" class="settings-btn settings-btn-secondary">
+            <button
+              type="button"
+              id="settingsCancelBtn"
+              class="settings-btn settings-btn-secondary"
+            >
               Cancel
             </button>
             <button type="submit" class="settings-btn settings-btn-primary">
@@ -1577,11 +2458,49 @@
             </button>
           </div>
         </form>
+        <hr
+          style="
+            margin: 40px 0 32px;
+            border: none;
+            border-top: 1px solid var(--border);
+          "
+        />
+
+        <div
+          class="settings-header"
+          style="margin-bottom: 24px; border: none; padding: 0"
+        >
+          <h2 style="font-size: 1.15rem; font-weight: 600; color: var(--red)">
+            Danger Zone
+          </h2>
+          <p
+            style="font-size: 0.88rem; color: var(--ink-soft); margin-top: 4px"
+          >
+            Permanently delete all your transaction data. This action cannot be
+            undone.
+          </p>
+        </div>
+
+        <div>
+          <button
+            type="button"
+            class="btn-danger"
+            id="resetDataBtn"
+            style="padding: 12px 24px; border-radius: var(--radius-md)"
+          >
+            Reset All Transaction Data
+          </button>
+        </div>
       </div>
     </section>
 
+    <!-- ===================Mobile Navigation====================== -->
     <nav class="bottom-nav" id="bottomNav">
-      <a href="#dashboard-section" class="bottom-nav-item active">
+      <button
+        id="dashboard-btn"
+        onClick="navigation('dashboard')"
+        class="bottom-nav-item active"
+      >
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -1594,7 +2513,7 @@
           <path d="M5 10v10h14V10" />
         </svg>
         Dashboard
-      </a>
+      </button>
 
       <button
         class="bottom-nav-fab"
@@ -1612,7 +2531,11 @@
         </svg>
       </button>
 
-      <a href="#transactions-section" class="bottom-nav-item">
+      <button
+        id="settings-btn"
+        onClick="navigation('settings')"
+        class="bottom-nav-item"
+      >
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -1624,10 +2547,11 @@
           <path d="M8 6h13M8 12h13M8 18h13" />
           <path d="M3 6h.01M3 12h.01M3 18h.01" />
         </svg>
-        Transactions
-      </a>
+        Settings
+      </button>
     </nav>
 
+    <!-- ================Modal form================= -->
     <div class="modal-overlay modal-overlay--hidden" id="transactionModal">
       <div class="modal">
         <div class="modal-header">
@@ -1640,7 +2564,7 @@
         <div class="modal-body">
           <form id="transactionForm">
             <div class="form-group">
-              <label class="form-label">Type</label>
+              <span class="typeIncomeBtn">Type</span>
               <div class="type-toggle" id="typeToggle">
                 <button
                   type="button"
@@ -1662,7 +2586,9 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="txnDescription">Description</label>
+              <label class="txnDescription" for="txnDescription"
+                >Description</label
+              >
               <input
                 required
                 class="form-input"
@@ -1674,23 +2600,25 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label" for="txnAmount">Amount</label>
+                <label class="txnAmount" for="txnAmount">Amount</label>
                 <input
                   required
                   class="form-input num"
                   type="number"
                   id="txnAmount"
                   placeholder="0.00"
+                  min="0.01"
+                  step="0.01"
                 />
               </div>
               <div class="form-group">
-                <label class="form-label" for="txnDate">Date</label>
+                <label class="txnDate" for="txnDate">Date</label>
                 <input required class="form-input" type="date" id="txnDate" />
               </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="txnCategory">Category</label>
+              <label class="txnCategory" for="txnCategory">Category</label>
               <select class="form-select" id="txnCategory" required>
                 <option value="">Select a category</option>
                 <option>Salary</option>
@@ -1715,6 +2643,36 @@
               </button>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================Modal Delete Confirmation================ -->
+    <div class="modal-overlay modal-overlay--hidden" id="deleteConfirmModal">
+      <div class="modal" style="max-width: 360px">
+        <div class="modal-header">
+          <div class="modal-title">Delete Transaction</div>
+          <button
+            class="modal-close"
+            onclick="closeDeleteModal()"
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="modal-body">
+          <p
+            style="color: var(--ink-soft); font-size: 0.95rem; line-height: 1.5"
+          >
+            Are you sure you want to delete this transaction? This action cannot
+            be undone.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-secondary" onclick="closeDeleteModal()">
+            Cancel
+          </button>
+          <button class="btn-danger" id="confirmDeleteBtn">Delete</button>
         </div>
       </div>
     </div>
@@ -1826,11 +2784,23 @@
       </div>
     </div>
 
+    <footer>
+      <p>&copy; 2026 Budgetly. All rights reserved</p>
+      <span class="filter-span"> | </span>
+      <p>
+        Developed by
+        <a target="_blank" href="https://www.linkedin.com/in/abdur4code"
+          >Abdur Rahim</a
+        >
+      </p>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
     <!-- ========================Main JavaScript Functionality================  -->
     <script>
       //   ================Main JavaScript Start==================
+      // -----------register and login functionality---------
       const registerForm = document.querySelector("#registerForm");
       const registerName = document.querySelector("#registerName");
       const registerUsername = document.querySelector("#registerUsername");
@@ -1840,22 +2810,137 @@
       );
       const authOverlay = document.querySelector("#authOverlay");
 
-      // ---------Current Date in dashboard-------
-      const dateElement = document.querySelector("#todayDate");
-      const options = { day: "numeric", month: "short", year: "numeric" };
-      dateElement.textContent = new Date().toLocaleDateString("en-US", options);
-
-      // ---------login session condition checked------
-      if (localStorage.getItem("logedUser")) {
-        authOverlay.classList.add("auth-overlay--hidden");
-      }
-
       // -----------Login and Register toggle--------
       const loginPanel = document.querySelector("#loginPanel");
       const registerPanel = document.querySelector("#registerPanel");
       const authTabRegister = document.querySelector("#authTabRegister");
       const authTabLogin = document.querySelector("#authTabLogin");
 
+      // --------login functionality--------
+      const loginForm = document.querySelector("#loginForm");
+      const loginUsername = document.querySelector("#loginUsername");
+      const loginPassword = document.querySelector("#loginPassword");
+
+      // -----------logout Functionality--------
+      const logoutBtn = document.querySelector("#logoutBtn");
+
+      // -----------modal open/close functioanlity--------
+      const modal = document.querySelector("#transactionModal");
+
+      // --------type of transaction -------
+      const incomeBtn = document.querySelector("#typeIncomeBtn");
+      const expenseBtn = document.querySelector("#typeExpenseBtn");
+
+      // ----------edit transaction functionality-------
+      const modalTitle = document.querySelector("#modalTitle");
+
+      // -------------Add Transaction Functionality----------
+      const transactionForm = document.querySelector("#transactionForm");
+      const txnDescription = document.querySelector("#txnDescription");
+      const txnAmount = document.querySelector("#txnAmount");
+      const txnDate = document.querySelector("#txnDate");
+      const txnCategory = document.querySelector("#txnCategory");
+      const transactionsBody = document.querySelector("#transactionsBody");
+
+      // ==========Stats functionality=========
+      const statBalance = document.querySelector("#statBalance");
+      const statIncome = document.querySelector("#statIncome");
+      const statExpense = document.querySelector("#statExpense");
+      const statCount = document.querySelector("#statCount");
+      const incomeCountDiv = document.querySelector("#incomeCount");
+      const expenseCountDiv = document.querySelector("#expenseCount");
+
+      //--------show entries filter by All / income / expense functionality---------
+      const filterAll = document.querySelector("#filterAll");
+      const filterIncome = document.querySelector("#filterIncome");
+      const filterExpense = document.querySelector("#filterExpense");
+
+      // ===============Settings page functionality===============
+      const mainPage = document.querySelector("#main-page");
+      const settingsPage = document.querySelector("#settings-section");
+      const settingsBTn = document.querySelector("#settings-btn");
+      const dashboardBtn = document.querySelector("#dashboard-btn");
+
+      // --------settings form functionality with logedUser data--------
+      const settingsForm = document.querySelector("#settingsForm");
+      const settingsName = document.querySelector("#settingsName");
+      const settingsUsername = document.querySelector("#settingsUsername");
+      const settingsCurrency = document.querySelector("#settingsCurrency");
+      const settingsCancelBtn = document.querySelector("#settingsCancelBtn");
+
+      // --- NEW: Populate Navbar Profile ---
+      const navProfileImg = document.querySelector("#navProfileImg");
+      const navProfileName = document.querySelector("#navProfileName");
+
+      // -------- Settings Form Variables --------
+      const imageUpload = document.querySelector("#imageUpload");
+      const mainAvatar = document.querySelector("#mainAvatar");
+      const presets = document.querySelectorAll(".settings-preset-img");
+
+      // =================Vars for Empty state functionality====================
+      const globalEmptyState = document.querySelector("#globalEmptyState");
+      const dashboardLayout = document.querySelector("#dashboardLayout");
+      const emptyStateTable = document.querySelector("#emptyState");
+      const tableScroll = document.querySelector(".table-scroll");
+
+      // ================= Category Configuration =================
+      const categoryConfig = {
+        Salary: { icon: "💰", color: "#16A34A" }, // Green
+        Freelance: { icon: "💻", color: "#268DDC" }, // Blue
+        Investment: { icon: "📈", color: "#8B5CF6" }, // Purple
+        Food: { icon: "🍔", color: "#F59E0B" }, // Orange
+        Transport: { icon: "🚕", color: "#06B6D4" }, // Cyan
+        Rent: { icon: "🏠", color: "#EC4899" }, // Pink
+        Utilities: { icon: "⚡", color: "#F97316" }, // Deep Orange
+        Shopping: { icon: "🛍️", color: "#EAB308" }, // Yellow
+        Health: { icon: "🏥", color: "#EF4444" }, // Red
+        Entertainment: { icon: "🎬", color: "#8B5CF6" }, // Violet
+        Other: { icon: "📦", color: "#6B7280" }, // Gray
+      };
+
+      // --------------Edit transaction ID Global----------
+      let editTransactionId = null;
+
+      // --------------Delete transaction ID and var Global----------
+      const deleteConfirmModal = document.querySelector("#deleteConfirmModal");
+      const confirmDeleteBtn = document.querySelector("#confirmDeleteBtn");
+      let transactionToDeleteId = null;
+
+      // ----------- Profile Dropdown Logic -----------
+      const navDropdownContainer = document.querySelector(
+        "#navDropdownContainer",
+      );
+      const navProfileBtn = document.querySelector("#navProfileBtn");
+
+      // ---------Current Date in dashboard-------
+      const dateElement = document.querySelector("#todayDate");
+      const options = { day: "numeric", month: "short", year: "numeric" };
+      dateElement.textContent = new Date().toLocaleDateString("en-US", options);
+
+      // ----------------- Theme Toggle -----------------
+      const themeToggleBtn = document.querySelector("#themeToggleBtn");
+      const currentTheme = localStorage.getItem("budgetly_theme") || "light";
+      document.documentElement.setAttribute("data-theme", currentTheme);
+
+      themeToggleBtn.addEventListener("click", () => {
+        let theme = document.documentElement.getAttribute("data-theme");
+        let targetTheme = theme === "light" ? "dark" : "light";
+
+        document.documentElement.setAttribute("data-theme", targetTheme);
+        localStorage.setItem("budgetly_theme", targetTheme);
+
+        if (localStorage.getItem("logedUser")) {
+          initDashboard();
+        }
+      });
+
+      // ---------login session condition checked------
+      if (localStorage.getItem("logedUser")) {
+        authOverlay.classList.add("auth-overlay--hidden");
+        initDashboard();
+      }
+
+      // -----------Login and Register toggle--------
       authTabRegister.addEventListener("click", () => {
         authTabRegister.classList.add("active");
         authTabLogin.classList.remove("active");
@@ -1893,11 +2978,15 @@
           }
         }
 
+        const defaultAvatar =
+          "https://api.dicebear.com/7.x/micah/svg?seed=Alex&backgroundColor=transparent";
+
         const user = {
           name,
           username,
           password,
           currency: "$",
+          avatar: defaultAvatar,
         };
 
         registeredUsers.push(user);
@@ -1916,10 +3005,6 @@
       });
 
       // --------login functionality--------
-      const loginForm = document.querySelector("#loginForm");
-      const loginUsername = document.querySelector("#loginUsername");
-      const loginPassword = document.querySelector("#loginPassword");
-
       loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -1947,35 +3032,35 @@
           name: logedUserData.name,
           currency: logedUserData.currency,
           username: logedUserData.username,
+          avatar: logedUserData.avatar,
         };
 
         localStorage.setItem("logedUser", JSON.stringify(logedUser));
         loginForm.reset();
+        initDashboard();
       });
 
       // -----------logout Functionality--------
-      const logoutBtn = document.querySelector("#logoutBtn");
-
       logoutBtn.addEventListener("click", () => {
         authOverlay.classList.remove("auth-overlay--hidden");
         localStorage.removeItem("logedUser");
+        window.location.reload();
       });
 
       // -----------modal open/close functioanlity--------
-      const modal = document.querySelector("#transactionModal");
-
       let openModal = () => {
         modal.classList.remove("modal-overlay--hidden");
       };
 
       let closeModal = () => {
         modal.classList.add("modal-overlay--hidden");
+        transactionForm.reset();
+        editTransactionId = null;
+        modalTitle.textContent = "Add Transaction";
+        selectType("income");
       };
 
       // --------type of transaction -------
-      const incomeBtn = document.querySelector("#typeIncomeBtn");
-      const expenseBtn = document.querySelector("#typeExpenseBtn");
-
       let transactionType = "income";
       const selectType = (type) => {
         transactionType = type;
@@ -1989,301 +3074,7 @@
         }
       };
 
-      // ----------edit transaction functionality-------
-      let editTransactionId = null;
-
-      function editTransaction(id) {
-        const modalTitle = document.querySelector("#modalTitle");
-        modalTitle.textContent = "Edit Transaction";
-        editTransactionId = id;
-        let editTransactionData =
-          user_transactions[user_transactions.findIndex((t) => t.id === id)];
-
-        txnDescription.value = editTransactionData.description;
-        txnAmount.value = editTransactionData.amount;
-        txnDate.value = editTransactionData.date;
-        txnCategory.value = editTransactionData.category;
-
-        selectType(editTransactionData.type);
-        openModal();
-      }
-
-      // -------------Add Transaction Functionality----------
-      const transactionForm = document.querySelector("#transactionForm");
-      const txnDescription = document.querySelector("#txnDescription");
-      const txnAmount = document.querySelector("#txnAmount");
-      const txnDate = document.querySelector("#txnDate");
-      const txnCategory = document.querySelector("#txnCategory");
-      const transactionsBody = document.querySelector("#transactionsBody");
-
-      let existingUser = JSON.parse(localStorage.getItem("logedUser"));
-      let logedUserName = existingUser.username;
-      let txnDataName = `${logedUserName}_transactions`;
-
-      console.log(txnDataName);
-
-      let user_transactions =
-        JSON.parse(localStorage.getItem(txnDataName)) || [];
-
-      transactionForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        const id = parseInt(Date.now().toString().slice(-9));
-        const amount = txnAmount.value.trim();
-        const description = txnDescription.value.trim();
-        const category = txnCategory.value.trim();
-        const date = txnDate.value.trim();
-        const type = transactionType;
-
-        if (editTransactionId === null) {
-          let userTransactionData = {
-            id,
-            amount,
-            description,
-            category,
-            date,
-            type,
-          };
-
-          user_transactions.push(userTransactionData);
-        } else {
-          let editTransactionData =
-            user_transactions[
-              user_transactions.findIndex((t) => t.id === editTransactionId)
-            ];
-
-          editTransactionData.description = description;
-          editTransactionData.amount = amount;
-          editTransactionData.category = category;
-          editTransactionData.date = date;
-          editTransactionData.type = type;
-
-          editTransactionId = null;
-        }
-
-        localStorage.setItem(txnDataName, JSON.stringify(user_transactions));
-
-        transactionForm.reset();
-        closeModal();
-        renderUi(user_transactions);
-      });
-
-      // ----------FlowChart functionality--------
-      let cashFlowChart = null;
-
-      function renderChart(income, expense) {
-        if (cashFlowChart !== null) {
-          cashFlowChart.destroy();
-        }
-
-        const ctx = document.getElementById("cashFlowChart").getContext("2d");
-
-        const incomeGradient = ctx.createLinearGradient(0, 0, 0, 320);
-        incomeGradient.addColorStop(0, "rgba(22, 163, 74, 0.95)");
-        incomeGradient.addColorStop(1, "rgba(22, 163, 74, 0.55)");
-
-        const expenseGradient = ctx.createLinearGradient(0, 0, 0, 320);
-        expenseGradient.addColorStop(0, "rgba(220, 38, 38, 0.95)");
-        expenseGradient.addColorStop(1, "rgba(220, 38, 38, 0.55)");
-
-        cashFlowChart = new Chart(ctx, {
-          type: "bar",
-          data: {
-            labels: ["Income", "Expense"],
-            datasets: [
-              {
-                label: "Amount",
-                data: [income, expense],
-                backgroundColor: [incomeGradient, expenseGradient],
-                borderRadius: 10,
-                borderSkipped: false,
-                barPercentage: 0.9,
-                categoryPercentage: 0.6,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            interaction: { mode: "index", intersect: false },
-            plugins: {
-              legend: { display: false },
-              tooltip: {
-                backgroundColor: "#111827",
-                padding: 12,
-                cornerRadius: 8,
-                titleFont: { family: "Inter", weight: "700", size: 12 },
-                bodyFont: { family: "IBM Plex Mono", size: 12 },
-                callbacks: {
-                  label: function (item) {
-                    // item.label is 'Income' or 'Expense' here, not item.data.label
-                    return (
-                      item.label +
-                      `: ${existingUser.currency}` +
-                      item.parsed.y.toLocaleString("en-IN")
-                    );
-                  },
-                },
-              },
-            },
-            scales: {
-              x: {
-                grid: { display: false },
-                ticks: {
-                  font: { family: "Inter", weight: "600", size: 12 },
-                  color: "#6B7280",
-                },
-              },
-              y: {
-                beginAtZero: true,
-                grid: { color: "#E6E8EE" },
-                border: { display: false },
-                ticks: {
-                  font: { family: "IBM Plex Mono", size: 10.5 },
-                  color: "#9AA1AC",
-                  callback: function (value) {
-                    return `${existingUser.currency}` + value / 1000 + "k";
-                  },
-                },
-              },
-            },
-          },
-        });
-      }
-
-      // --------Stats functionality--------
-      const statBalance = document.querySelector("#statBalance");
-      const statIncome = document.querySelector("#statIncome");
-      const statExpense = document.querySelector("#statExpense");
-      const statCount = document.querySelector("#statCount");
-      const incomeCountDiv = document.querySelector("#incomeCount");
-      const expenseCountDiv = document.querySelector("#expenseCount");
-
-      function statUpdate() {
-        let txnCount = user_transactions.length;
-
-        let incomeCount = 0;
-        let expenseCount = 0;
-
-        let income = 0;
-        let expense = 0;
-
-        user_transactions.forEach((elem) => {
-          if (elem.type === "income") {
-            income += parseInt(elem.amount);
-            incomeCount++;
-          } else if (elem.type === "expense") {
-            expense += parseInt(elem.amount);
-            expenseCount++;
-          }
-        });
-
-        let currentBalance = income - expense;
-
-        statBalance.textContent = `${existingUser.currency}${currentBalance}`;
-        statIncome.textContent = `${existingUser.currency}${income}`;
-        statExpense.textContent = `${existingUser.currency}${expense}`;
-        statCount.textContent = txnCount;
-        incomeCountDiv.textContent = `${incomeCount} income entries`;
-        expenseCountDiv.textContent = `${expenseCount} expense entries`;
-
-        renderChart(income, expense);
-      }
-      // -----------Render Functionality---------
-      function renderUi(userDataArray) {
-        transactionsBody.innerHTML = "";
-
-        for (let i = userDataArray.length - 1; i >= 0; i--) {
-          let elem = userDataArray[i];
-          let sign = elem.type === "income" ? "+" : "-";
-          transactionsBody.innerHTML += `<tr data-id="${elem.id}" data-type="${elem.type}">
-                  <td class="col-date">${elem.date}</td>
-                  <td class="col-desc">${elem.description}</td>
-                  <td><span class="category-chip">${elem.category}</span></td>
-                  <td class="col-amount amount-${elem.type} num">${sign}${existingUser.currency}${elem.amount}.00</td>
-                  <td class="col-action">
-                    <button
-                      class="edit-btn"
-                      onclick="editTransaction(${elem.id})"
-                      aria-label="Edit transaction"
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="64pt" height="64pt" style="isolation:isolate" viewBox="0 0 64 64" id="edit">
-  <defs>
-    <clipPath id="a">
-      <rect width="64" height="64"></rect>
-    </clipPath>
-  </defs>
-  <g clip-path="url(#a)">
-    <path d="M43.926 8.803L49.563 3.167C51.118 1.611 53.643 1.611 55.199 3.167L60.835 8.803C62.39 10.358 62.382 12.876 60.817 14.421L55.146 20.022C54.624 20.537 53.78 20.535 53.261 20.016L43.926 10.681C43.408 10.163 43.408 9.321 43.926 8.803zM42.048 12.56L51.441 21.954C51.96 22.472 51.96 23.314 51.441 23.833L15.276 59.998C15.017 60.257 14.511 60.51 14.148 60.562L4.285 61.971C2.834 62.178 1.823 61.168 2.031 59.716L3.44 49.853C3.492 49.49 3.744 48.985 4.003 48.726L40.169 12.56C40.687 12.042 41.529 12.042 42.048 12.56z"></path>
-  </g>
-</svg>                   
-                    </button>
-                     <button
-                      class="delete-btn"
-                      onclick="deleteTransaction(${elem.id})"
-                      aria-label="Delete transaction"
-                    ><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="Delete" x="0" y="0" version="1.1" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
-  <g fill="#d85b53" class="color000000 svgShape">
-    <path d="M109.72 460.72c1.69 28.74 25.57 51.25 54.36 51.25h183.84c28.79 0 52.67-22.51 54.36-51.25l16.98-287.58H92.74L109.72 460.72zM307.01 413.5l11.79-173.29c.82-12.02 10.89-21.44 22.93-21.44.53 0 1.05.02 1.58.05 6.13.42 11.73 3.2 15.77 7.83 4.04 4.63 6.03 10.55 5.61 16.68l-11.78 173.29c-.82 12.03-10.9 21.44-22.94 21.44-.52 0-1.04-.01-1.57-.05C315.75 437.15 306.15 426.16 307.01 413.5zM233 241.33c0-12.68 10.32-23 23-23s23 10.32 23 23v173.7c0 12.68-10.32 23-23 23s-23-10.32-23-23V241.33zM152.92 226.65c4.04-4.63 9.64-7.41 15.77-7.83.53-.03 1.05-.05 1.58-.05 12.04 0 22.11 9.42 22.93 21.44l11.79 173.29c.86 12.66-8.74 23.65-21.39 24.51-.53.04-1.05.05-1.57.05-12.05 0-22.12-9.41-22.94-21.44l-11.78-173.29C146.89 237.2 148.88 231.28 152.92 226.65zM419.74 87.44h-81.53c2.38-7.33 2.78-15.25 1.01-23.01l-3.48-15.21c-6.63-28.96-32-49.19-61.71-49.19h-36.05c-29.71 0-55.09 20.23-61.71 49.19l-3.48 15.21c-1.78 7.76-1.37 15.68 1.01 23.01H92.26c-15.74 0-28.55 12.81-28.55 28.56v8.59c0 15.74 12.81 28.55 28.55 28.55h327.48c15.74 0 28.55-12.81 28.55-28.55V116C448.29 100.25 435.48 87.44 419.74 87.44zM202.02 71.12l3.48-15.21c3.49-15.24 16.84-25.88 32.47-25.88h36.05c15.63 0 28.98 10.64 32.47 25.88l3.48 15.21c.91 3.98-.03 8.1-2.57 11.29-2.55 3.2-6.35 5.03-10.44 5.03h-81.93c-4.09 0-7.89-1.83-10.44-5.03C202.05 79.22 201.11 75.1 202.02 71.12z" fill="#d85b53" class="color000000 svgShape"></path>
-  </g>
-</svg></button>
-                  </td>
-                </tr>`;
-        }
-        statUpdate();
-      }
-
-      renderUi(user_transactions);
-
-      // -----Show entries filter by All / income / expense functionality-----
-      const filterTransactions = (type) => {
-        const filterAll = document.querySelector("#fliterAll");
-        const filterIncome = document.querySelector("#fliterIncome");
-        const filterExpense = document.querySelector("#fliterExpense");
-
-        if (type === "income") {
-          let filteredIncome = user_transactions.filter(
-            (t) => t.type === "income",
-          );
-          filterIncome.classList.add("active");
-          filterAll.classList.remove("active");
-          filterExpense.classList.remove("active");
-
-          renderUi(filteredIncome);
-        } else if (type === "expense") {
-          let filteredExpense = user_transactions.filter(
-            (e) => e.type === "expense",
-          );
-          filterIncome.classList.remove("active");
-          filterAll.classList.remove("active");
-          filterExpense.classList.add("active");
-
-          renderUi(filteredExpense);
-        } else {
-          filterIncome.classList.remove("active");
-          filterAll.classList.add("active");
-          filterExpense.classList.remove("active");
-
-          renderUi(user_transactions);
-        }
-      };
-
-      // -----delete Transaction functionality---------
-
-      function deleteTransaction(id) {
-        const delIndex = user_transactions.findIndex((t) => t.id === id);
-        user_transactions.splice(delIndex, 1);
-        localStorage.setItem(txnDataName, JSON.stringify(user_transactions));
-        renderUi(user_transactions);
-      }
-
       // ===============Settings page functionality===============
-      const mainPage = document.querySelector("#main-page");
-      const settingsPage = document.querySelector("#settings-section");
-      const settingsBTn = document.querySelector("#settings-btn");
-      const dashboardBtn = document.querySelector("#dashboard-btn");
-
-      console.log(settingsBTn, dashboardBtn);
       function navigation(page) {
         if (page === "dashboard") {
           mainPage.classList.remove("settings-page--hidden");
@@ -2291,6 +3082,7 @@
           dashboardBtn.classList.add("active");
           settingsBTn.classList.remove("active");
         } else {
+          resetSettingsFields();
           mainPage.classList.add("settings-page--hidden");
           settingsPage.classList.remove("settings-page--hidden");
           dashboardBtn.classList.remove("active");
@@ -2298,51 +3090,717 @@
         }
       }
 
-      // --------settings form functionality with logedUser data--------
-      const settingsForm = document.querySelector("#settingsForm");
-      const settingsName = document.querySelector("#settingsName");
-      const settingsUsername = document.querySelector("#settingsUsername");
-      const settingsCurrency = document.querySelector("#settingsCurrency");
-      console.log(settingsUsername);
-      settingsName.value = existingUser.name;
-      settingsUsername.value = existingUser.username;
-      settingsCurrency.value = existingUser.currency;
+      // ------------cancel button functionality in settings page---------
+      settingsCancelBtn.addEventListener("click", () => {
+        resetSettingsFields();
+        navigation("dashboard");
+      });
 
-      console.log(settingsUsername);
+      //------------Delete confirmation modal functionality------------
+      window.closeDeleteModal = () => {
+        deleteConfirmModal.classList.add("modal-overlay--hidden");
+        transactionToDeleteId = null;
+      };
 
-      console.log(existingUser.username);
+      window.promptDelete = (id) => {
+        transactionToDeleteId = id;
+        deleteConfirmModal.classList.remove("modal-overlay--hidden");
+      };
 
-      settingsForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+      // ---------------Profile Dropdown Functionality----------------
+      navProfileBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navDropdownContainer.classList.toggle("active");
+      });
 
-        const updatedName = settingsName.value.trim();
-        const updatedUsername = settingsUsername.value.trim();
-        const updatedCurrency = settingsCurrency.value.trim();
+      // Close dropdown if the user clicks anywhere else on the screen
+      document.addEventListener("click", (e) => {
+        if (!navDropdownContainer.contains(e.target)) {
+          navDropdownContainer.classList.remove("active");
+        }
+      });
 
-        const oldUsername = existingUser.username;
+      // Helper to manually close the menu (used when clicking 'Settings')
+      window.closeDropdown = () => {
+        navDropdownContainer.classList.remove("active");
+      };
 
-        existingUser.name = updatedName;
-        existingUser.username = updatedUsername;
-        existingUser.currency = updatedCurrency;
+      // <====================================>
+      // <------init dashboard function------->
+      // <====================================>
+      function initDashboard() {
+        // ----------existing user data from localStorage--------
+        const existingUser = JSON.parse(localStorage.getItem("logedUser"));
 
-        if (oldUsername !== updatedUsername) {
-          const oldKey = `${oldUsername}_transactions`;
-          const newKey = `${updatedUsername}_transactions`;
-
-          const oldData = localStorage.getItem(oldKey);
-          if (oldData) {
-            localStorage.setItem(newKey, oldData);
-            localStorage.removeItem(oldKey);
-          }
-
-          txnDataName = newKey;
+        if (!existingUser) {
+          return;
         }
 
-        localStorage.setItem("logedUser", JSON.stringify(existingUser));
-        settingsForm.reset();
+        const defaultAvatar =
+          "https://api.dicebear.com/7.x/micah/svg?seed=Alex&backgroundColor=transparent";
+        navProfileImg.src = existingUser.profileImg || defaultAvatar;
+        navProfileName.textContent = existingUser.name;
 
+        const logedUserName = existingUser.username;
+        let txnDataName = `${logedUserName}_transactions`;
+
+        let user_transactions =
+          JSON.parse(localStorage.getItem(txnDataName)) || [];
+
+        // ==========Stats functionality=========
+        function statUpdate() {
+          let txnCount = user_transactions.length;
+
+          let incomeCount = 0;
+          let expenseCount = 0;
+
+          let income = 0;
+          let expense = 0;
+
+          user_transactions.forEach((elem) => {
+            if (elem.type === "income") {
+              income += parseFloat(elem.amount);
+              incomeCount++;
+            } else if (elem.type === "expense") {
+              expense += parseFloat(elem.amount);
+              expenseCount++;
+            }
+          });
+
+          let currentBalance = income - expense;
+
+          statBalance.textContent = `${existingUser.currency}${parseFloat(currentBalance).toFixed(2)}`;
+          statIncome.textContent = `${existingUser.currency}${parseFloat(income).toFixed(2)}`;
+          statExpense.textContent = `${existingUser.currency}${parseFloat(expense).toFixed(2)}`;
+          statCount.textContent = txnCount;
+          incomeCountDiv.textContent = `${incomeCount} income entries`;
+          expenseCountDiv.textContent = `${expenseCount} expense entries`;
+
+          renderChart(income, expense);
+        }
+
+        // =========FlowChart functionality=========
+        function renderChart(income, expense) {
+          let existingChart = Chart.getChart("cashFlowChart");
+          if (existingChart) {
+            existingChart.destroy();
+          }
+
+          const ctx = document.getElementById("cashFlowChart").getContext("2d");
+
+          // --- NEW: Fetch live CSS variables based on the active theme ---
+          const rootStyles = getComputedStyle(document.documentElement);
+          const borderColor =
+            rootStyles.getPropertyValue("--border").trim() || "#E6E8EE";
+          const softTextColor =
+            rootStyles.getPropertyValue("--ink-soft").trim() || "#6B7280";
+          const faintTextColor =
+            rootStyles.getPropertyValue("--ink-faint").trim() || "#9AA1AC";
+          // ---------------------------------------------------------------
+
+          const incomeGradient = ctx.createLinearGradient(0, 0, 0, 320);
+          incomeGradient.addColorStop(0, "rgba(22, 163, 74, 0.95)");
+          incomeGradient.addColorStop(1, "rgba(22, 163, 74, 0.4)");
+
+          const expenseGradient = ctx.createLinearGradient(0, 0, 0, 320);
+          expenseGradient.addColorStop(0, "rgba(220, 38, 38, 0.95)");
+          expenseGradient.addColorStop(1, "rgba(220, 38, 38, 0.41)");
+
+          cashFlowChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: ["Income", "Expense"],
+              datasets: [
+                {
+                  label: "Amount",
+                  data: [income, expense],
+                  backgroundColor: [incomeGradient, expenseGradient],
+                  borderRadius: 8,
+                  borderSkipped: false,
+                  barPercentage: 0.8,
+                  categoryPercentage: 0.9,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              interaction: { mode: "index", intersect: false },
+              plugins: {
+                legend: { display: false },
+                tooltip: {
+                  backgroundColor: "#111827",
+                  padding: 12,
+                  cornerRadius: 8,
+                  titleFont: { family: "Inter", weight: "700", size: 12 },
+                  bodyFont: { family: "IBM Plex Mono", size: 12 },
+                  callbacks: {
+                    label: function (item) {
+                      return (
+                        item.label +
+                        `: ${existingUser.currency}` +
+                        item.parsed.y.toLocaleString("en-IN")
+                      );
+                    },
+                  },
+                },
+              },
+              scales: {
+                x: {
+                  grid: { display: false },
+                  ticks: {
+                    font: { family: "Inter", weight: "600", size: 12 },
+                    color: softTextColor, // Applied dynamic text color
+                  },
+                },
+                y: {
+                  beginAtZero: true,
+                  grid: { color: borderColor },
+                  border: { display: false },
+                  ticks: {
+                    font: { family: "IBM Plex Mono", size: 10.5 },
+                    color: faintTextColor,
+                    callback: function (value) {
+                      return (
+                        `${existingUser.currency}` +
+                        parseFloat(value).toFixed(2) / 1000 +
+                        "k"
+                      );
+                    },
+                  },
+                },
+              },
+            },
+          });
+        }
+
+        // ========= Pie Chart Functionality =========
+        function renderPieChart(userDataArray) {
+          let existingPie = Chart.getChart("categoryPieChart");
+          if (existingPie) {
+            existingPie.destroy();
+          }
+
+          const expenses = userDataArray.filter((t) => t.type === "expense");
+          let totalExpense = 0;
+          const categoryData = {};
+
+          expenses.forEach((t) => {
+            const amount = parseFloat(t.amount);
+            categoryData[t.category] = (categoryData[t.category] || 0) + amount;
+            totalExpense += amount;
+          });
+
+          const totalEl = document.getElementById("pieChartTotal");
+          if (totalEl)
+            totalEl.textContent = `${existingUser.currency}${totalExpense.toLocaleString("en-IN")}`;
+
+          const labels = Object.keys(categoryData);
+          const data = Object.values(categoryData);
+
+          const bgColors = labels.map((label) =>
+            categoryConfig[label] ? categoryConfig[label].color : "#6B7280",
+          );
+
+          const ctx = document
+            .getElementById("categoryPieChart")
+            .getContext("2d");
+          const textColor = getComputedStyle(document.documentElement)
+            .getPropertyValue("--ink-soft")
+            .trim();
+
+          new Chart(ctx, {
+            type: "doughnut",
+            data: {
+              labels: labels.length ? labels : ["No Expenses"],
+              datasets: [
+                {
+                  data: data.length ? data : [1],
+                  backgroundColor: data.length ? bgColors : ["#E6E8EE"],
+                  borderWidth: 0,
+                  borderRadius: 15,
+                  spacing: 4,
+                  hoverOffset: 4,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              cutout: "78%",
+              plugins: {
+                legend: { display: false },
+                tooltip: {
+                  callbacks: {
+                    label: function (context) {
+                      if (!data.length) return " No Expenses";
+                      return ` ${existingUser.currency}${context.parsed.toLocaleString("en-IN")}`;
+                    },
+                  },
+                },
+              },
+            },
+          });
+
+          const listContainer = document.getElementById(
+            "categoryListContainer",
+          );
+          if (!listContainer) return;
+
+          listContainer.innerHTML = "";
+
+          if (expenses.length === 0) {
+            listContainer.innerHTML =
+              "<p style='color: var(--ink-soft); font-size: 0.85rem;'>No expenses logged yet.</p>";
+            return;
+          }
+
+          const sortedCats = labels
+            .map((label) => ({
+              name: label,
+              amount: categoryData[label],
+              percent: Math.round((categoryData[label] / totalExpense) * 100),
+            }))
+            .sort((a, b) => b.amount - a.amount);
+
+          sortedCats.forEach((cat) => {
+            const config = categoryConfig[cat.name] || categoryConfig["Other"];
+            listContainer.innerHTML += `
+              <div class="category-list-item">
+                <div class="cat-item-left">
+                  <div class="cat-item-icon" style="background: ${config.color}15; color: ${config.color};">
+                    ${config.icon}
+                  </div>
+                  <div class="cat-item-details">
+                    <span class="cat-item-title">${cat.name}</span>
+                    <span class="cat-item-percent" style="color: ${config.color};">${cat.percent}%</span>
+                  </div>
+                </div>
+                <div class="cat-item-right">
+                  ${existingUser.currency}${cat.amount.toLocaleString("en-IN")}
+                </div>
+              </div>
+            `;
+          });
+        }
+
+        // ========= Reset Dashboard Data =========
+        const resetDataBtn = document.querySelector("#resetDataBtn");
+        // .onclick prevents multiple listeners from stacking if initDashboard runs again
+        resetDataBtn.onclick = () => {
+          const confirmMsg =
+            "Are you sure you want to permanently delete ALL transactions? This cannot be undone.";
+          if (confirm(confirmMsg)) {
+            user_transactions = [];
+            localStorage.setItem(
+              txnDataName,
+              JSON.stringify(user_transactions),
+            );
+            renderUi(user_transactions);
+            navigation("dashboard");
+          }
+        };
+        // =========Render Functionality=============
+        function renderUi(userDataArray) {
+          // 1. GLOBAL EMPTY STATE
+          if (user_transactions.length === 0) {
+            dashboardLayout.style.display = "none";
+            globalEmptyState.style.display = "flex";
+            return; // Stop rendering everything else!
+          } else {
+            // Restore the grid if transactions exist
+            dashboardLayout.style.display = "";
+            globalEmptyState.style.display = "none";
+          }
+
+          // 2. Clear the table body
+          transactionsBody.innerHTML = "";
+
+          // 3. FILTER EMPTY STATE
+          if (userDataArray.length === 0) {
+            emptyStateTable.style.display = "block";
+            tableScroll.style.display = "none";
+          } else {
+            emptyStateTable.style.display = "none";
+            tableScroll.style.display = "block";
+
+            // Loop through the data and build the table
+            for (let i = userDataArray.length - 1; i >= 0; i--) {
+              let elem = userDataArray[i];
+              let sign = elem.type === "income" ? "+" : "-";
+
+              let catConf =
+                categoryConfig[elem.category] || categoryConfig["Other"];
+
+              transactionsBody.innerHTML += `<tr data-id="${elem.id}" data-type="${elem.type}">
+                  <td class="col-date">${elem.date}</td>
+                  <td class="col-desc">${elem.description}</td>
+                  <td>
+                    <span class="category-chip" style="color: ${catConf.color}; background: ${catConf.color}20;">
+                      <span style="margin-right: 6px;">${catConf.icon}</span>${elem.category}
+                    </span>
+                  </td>
+                  <td class="col-amount amount-${elem.type} num">${sign}${existingUser.currency}${parseFloat(elem.amount).toFixed(2)}</td>
+                  <td class="col-action">
+                    <button class="edit-btn" aria-label="Edit transaction">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="64pt" height="64pt" style="isolation:isolate" viewBox="0 0 64 64" id="edit"><defs><clipPath id="a"><rect width="64" height="64"></rect></clipPath></defs><g clip-path="url(#a)"><path d="M43.926 8.803L49.563 3.167C51.118 1.611 53.643 1.611 55.199 3.167L60.835 8.803C62.39 10.358 62.382 12.876 60.817 14.421L55.146 20.022C54.624 20.537 53.78 20.535 53.261 20.016L43.926 10.681C43.408 10.163 43.408 9.321 43.926 8.803zM42.048 12.56L51.441 21.954C51.96 22.472 51.96 23.314 51.441 23.833L15.276 59.998C15.017 60.257 14.511 60.51 14.148 60.562L4.285 61.971C2.834 62.178 1.823 61.168 2.031 59.716L3.44 49.853C3.492 49.49 3.744 48.985 4.003 48.726L40.169 12.56C40.687 12.042 41.529 12.042 42.048 12.56z"></path></g></svg>                   
+                    </button>
+                    <button class="delete-btn" aria-label="Delete transaction">
+                       <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="Delete" x="0" y="0" version="1.1" viewBox="0 0 512 512" enable-background="new 0 0 512 512"><g fill="#d85b53" class="color000000 svgShape"><path d="M109.72 460.72c1.69 28.74 25.57 51.25 54.36 51.25h183.84c28.79 0 52.67-22.51 54.36-51.25l16.98-287.58H92.74L109.72 460.72zM307.01 413.5l11.79-173.29c.82-12.02 10.89-21.44 22.93-21.44.53 0 1.05.02 1.58.05 6.13.42 11.73 3.2 15.77 7.83 4.04 4.63 6.03 10.55 5.61 16.68l-11.78 173.29c-.82 12.03-10.9 21.44-22.94 21.44-.52 0-1.04-.01-1.57-.05C315.75 437.15 306.15 426.16 307.01 413.5zM233 241.33c0-12.68 10.32-23 23-23s23 10.32 23 23v173.7c0 12.68-10.32 23-23 23s-23-10.32-23-23V241.33zM152.92 226.65c4.04-4.63 9.64-7.41 15.77-7.83.53-.03 1.05-.05 1.58-.05 12.04 0 22.11 9.42 22.93 21.44l11.79 173.29c.86 12.66-8.74 23.65-21.39 24.51-.53.04-1.05.05-1.57.05-12.05 0-22.12-9.41-22.94-21.44l-11.78-173.29C146.89 237.2 148.88 231.28 152.92 226.65zM419.74 87.44h-81.53c2.38-7.33 2.78-15.25 1.01-23.01l-3.48-15.21c-6.63-28.96-32-49.19-61.71-49.19h-36.05c-29.71 0-55.09 20.23-61.71 49.19l-3.48 15.21c-1.78 7.76-1.37 15.68 1.01 23.01H92.26c-15.74 0-28.55 12.81-28.55 28.56v8.59c0 15.74 12.81 28.55 28.55 28.55h327.48c15.74 0 28.55-12.81 28.55-28.55V116C448.29 100.25 435.48 87.44 419.74 87.44zM202.02 71.12l3.48-15.21c3.49-15.24 16.84-25.88 32.47-25.88h36.05c15.63 0 28.98 10.64 32.47 25.88l3.48 15.21c.91 3.98-.03 8.1-2.57 11.29-2.55 3.2-6.35 5.03-10.44 5.03h-81.93c-4.09 0-7.89-1.83-10.44-5.03C202.05 79.22 201.11 75.1 202.02 71.12z" fill="#d85b53" class="color000000 svgShape"></path></g></svg></button>
+                  </td>
+                </tr>`;
+            }
+          }
+
+          statUpdate();
+          renderPieChart(userDataArray);
+        }
+
+        // -------------------add transaction code start--------------
+        transactionForm.onsubmit = (e) => {
+          e.preventDefault();
+          const id = parseInt(Date.now().toString().slice(-9));
+          const amount = Math.abs(parseFloat(txnAmount.value.trim()));
+          const description = txnDescription.value.trim();
+          const category = txnCategory.value.trim();
+          const date = txnDate.value.trim();
+          const type = transactionType;
+
+          if (editTransactionId === null) {
+            let userTransactionData = {
+              id,
+              amount,
+              description,
+              category,
+              date,
+              type,
+            };
+
+            user_transactions.push(userTransactionData);
+          } else {
+            let editTransactionData =
+              user_transactions[
+                user_transactions.findIndex((t) => t.id === editTransactionId)
+              ];
+
+            editTransactionData.description = description;
+            editTransactionData.amount = amount;
+            editTransactionData.category = category;
+            editTransactionData.date = date;
+            editTransactionData.type = type;
+
+            editTransactionId = null;
+          }
+
+          localStorage.setItem(txnDataName, JSON.stringify(user_transactions));
+
+          transactionForm.reset();
+          closeModal();
+
+          if (filterIncome.classList.contains("active")) {
+            filterTransactions("income");
+          } else if (filterExpense.classList.contains("active")) {
+            filterTransactions("expense");
+          } else {
+            filterTransactions("all");
+          }
+        };
+
+        // ---------event deligation in edit and delete----------
+        transactionsBody.onclick = (e) => {
+          const editBtn = e.target.closest(".edit-btn");
+          const deleteBtn = e.target.closest(".delete-btn");
+
+          if (editBtn) {
+            const id = parseInt(editBtn.closest("tr").dataset.id);
+            editTransaction(id);
+          }
+
+          if (deleteBtn) {
+            const id = parseInt(deleteBtn.closest("tr").dataset.id);
+            promptDelete(id);
+          }
+        };
+
+        // ----------edit transaction functionality-------
+        function editTransaction(id) {
+          const index = user_transactions.findIndex((t) => t.id === id);
+
+          if (index === -1) return;
+
+          modalTitle.textContent = "Edit Transaction";
+          editTransactionId = id;
+          let editTransactionData = user_transactions[index];
+
+          txnDescription.value = editTransactionData.description;
+          txnAmount.value = editTransactionData.amount;
+          txnDate.value = editTransactionData.date;
+          txnCategory.value = editTransactionData.category;
+
+          selectType(editTransactionData.type);
+          openModal();
+        }
+
+        // -----delete Transaction functionality---------
+        function deleteTransaction(id) {
+          const delIndex = user_transactions.findIndex((t) => t.id === id);
+          user_transactions.splice(delIndex, 1);
+          localStorage.setItem(txnDataName, JSON.stringify(user_transactions));
+
+          // Check which filter is active before rendering
+          if (filterIncome.classList.contains("active")) {
+            filterTransactions("income");
+          } else if (filterExpense.classList.contains("active")) {
+            filterTransactions("expense");
+          } else {
+            filterTransactions("all");
+          }
+        }
+
+        confirmDeleteBtn.onclick = () => {
+          if (transactionToDeleteId !== null) {
+            deleteTransaction(transactionToDeleteId);
+            closeDeleteModal();
+          }
+        };
+
+        // -----Show entries filter by All / income / expense functionality-----
+        const filterTransactions = (type) => {
+          if (type === "income") {
+            let filteredIncome = user_transactions.filter(
+              (t) => t.type === "income",
+            );
+            filterIncome.classList.add("active");
+            filterAll.classList.remove("active");
+            filterExpense.classList.remove("active");
+
+            renderUi(filteredIncome);
+          } else if (type === "expense") {
+            let filteredExpense = user_transactions.filter(
+              (e) => e.type === "expense",
+            );
+            filterIncome.classList.remove("active");
+            filterAll.classList.remove("active");
+            filterExpense.classList.add("active");
+
+            renderUi(filteredExpense);
+          } else {
+            filterIncome.classList.remove("active");
+            filterAll.classList.add("active");
+            filterExpense.classList.remove("active");
+
+            renderUi(user_transactions);
+          }
+        };
+
+        document
+          .querySelector("#filterAll")
+          .addEventListener("click", () => filterTransactions("all"));
+        document
+          .querySelector("#filterIncome")
+          .addEventListener("click", () => filterTransactions("income"));
+        document
+          .querySelector("#filterExpense")
+          .addEventListener("click", () => filterTransactions("expense"));
+
+        // ========= Download CSV Functionality =========
+        const downloadCsvBtn = document.querySelector("#downloadCsvBtn");
+
+        downloadCsvBtn.onclick = () => {
+          if (user_transactions.length === 0) {
+            alert("No transactions available to download.");
+            return;
+          }
+
+          // 1. Create the Header Row
+          const headers = [
+            "No.",
+            "Date",
+            "Description",
+            "Category",
+            "Type",
+            "Amount",
+          ];
+          const csvRows = [headers.join(",")];
+
+          // 2. Loop through data and format each row
+          user_transactions.forEach((t, index) => {
+            const safeDescription = `"${t.description.replace(/"/g, '""')}"`;
+
+            const displayId = index + 1;
+
+            const dateObj = new Date(t.date);
+            const displayDate = dateObj.toLocaleDateString("en-GB", {
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            });
+
+            const row = [
+              displayId,
+              displayDate,
+              safeDescription,
+              t.category,
+              t.type,
+              t.amount,
+            ];
+
+            csvRows.push(row.join(","));
+          });
+
+          const csvString = csvRows.join("\n");
+
+          const blob = new Blob([csvString], {
+            type: "text/csv;charset=utf-8;",
+          });
+          const url = URL.createObjectURL(blob);
+
+          const downloadLink = document.createElement("a");
+          downloadLink.setAttribute("href", url);
+          downloadLink.setAttribute(
+            "download",
+            `${existingUser.username}_budget_data.csv`,
+          );
+
+          // Append to body, click, and clean up instantly
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+
+          // Free up browser memory
+          URL.revokeObjectURL(url);
+        };
+
+        // --------Profile Settings Functionality--------
+        let currentSelectedImage = existingUser.profileImg || defaultAvatar;
+
+        imageUpload.addEventListener("change", (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+
+          if (file.size > 1048576) {
+            alert("Image is too large! Please choose an image under 1MB.");
+            imageUpload.value = "";
+            return;
+          }
+
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            const base64String = event.target.result;
+            mainAvatar.src = base64String;
+            currentSelectedImage = base64String;
+
+            presets.forEach((img) => img.classList.remove("active"));
+          };
+          reader.readAsDataURL(file);
+        });
+
+        // 2. Handle Preset Selections
+        presets.forEach((preset) => {
+          preset.addEventListener("click", (e) => {
+            presets.forEach((img) => img.classList.remove("active"));
+            e.target.classList.add("active");
+
+            const newSrc = e.target.src;
+            mainAvatar.src = newSrc;
+            currentSelectedImage = newSrc;
+
+            imageUpload.value = "";
+          });
+        });
+
+        // 3. Update resetSettingsFields to handle the image
+        window.resetSettingsFields = function () {
+          settingsName.value = existingUser.name;
+          settingsUsername.value = existingUser.username;
+          settingsCurrency.value = existingUser.currency;
+          const savedImage = existingUser.profileImg || defaultAvatar;
+          mainAvatar.src = savedImage;
+          currentSelectedImage = savedImage;
+
+          const presets = document.querySelectorAll(".settings-preset-img");
+
+          presets.forEach((presetItem) => {
+            const itemSrc = presetItem.getAttribute("src");
+
+            if (itemSrc === savedImage) {
+              presetItem.classList.add("active");
+            } else {
+              presetItem.classList.remove("active");
+            }
+          });
+        };
+        resetSettingsFields();
+
+        settingsName.value = existingUser.name;
+        settingsUsername.value = existingUser.username;
+        settingsCurrency.value = existingUser.currency;
+
+        settingsForm.onsubmit = (e) => {
+          e.preventDefault();
+
+          const updatedName = settingsName.value.trim();
+          const updatedUsername = settingsUsername.value.trim();
+          const updatedCurrency = settingsCurrency.value.trim();
+
+          const oldUsername = existingUser.username;
+          let registeredUsersArray =
+            JSON.parse(localStorage.getItem("registeredUsers")) || [];
+
+          // 1. Check for username conflicts FIRST
+          if (updatedUsername !== oldUsername) {
+            const isTaken = registeredUsersArray.some(
+              (user) => user.username === updatedUsername,
+            );
+
+            if (isTaken) {
+              return alert("Username already exists! Please choose another.");
+            }
+          }
+
+          existingUser.name = updatedName;
+          existingUser.username = updatedUsername;
+          existingUser.currency = updatedCurrency;
+          existingUser.profileImg = currentSelectedImage;
+
+          if (oldUsername !== updatedUsername) {
+            const oldKey = `${oldUsername}_transactions`;
+            const newKey = `${updatedUsername}_transactions`;
+
+            const oldData = localStorage.getItem(oldKey);
+            if (oldData) {
+              localStorage.setItem(newKey, oldData);
+              localStorage.removeItem(oldKey);
+            }
+            txnDataName = newKey;
+          }
+
+          const userIndex = registeredUsersArray.findIndex(
+            (user) => user.username === oldUsername,
+          );
+          if (userIndex !== -1) {
+            registeredUsersArray[userIndex].name = updatedName;
+            registeredUsersArray[userIndex].username = updatedUsername;
+            registeredUsersArray[userIndex].currency = updatedCurrency;
+            registeredUsersArray[userIndex].profileImg = currentSelectedImage;
+            localStorage.setItem(
+              "registeredUsers",
+              JSON.stringify(registeredUsersArray),
+            );
+          }
+
+          localStorage.setItem("logedUser", JSON.stringify(existingUser));
+
+          document.querySelector("#navProfileImg").src = currentSelectedImage;
+          document.querySelector("#navProfileName").textContent = updatedName;
+
+          settingsForm.reset();
+          alert("Settings updated successfully!");
+          renderUi(user_transactions);
+          navigation("dashboard");
+        };
         renderUi(user_transactions);
-      });
+      }
     </script>
   </body>
 </html>
