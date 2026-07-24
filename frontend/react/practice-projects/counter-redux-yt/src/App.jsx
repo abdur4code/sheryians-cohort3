@@ -1,11 +1,10 @@
 import React from 'react'
+import Counter from './features/counter/Counter'
 
 const App = () => {
   return (
      <div className="flex h-screen items-center justify-center bg-black">
-      <h1 className="text-5xl font-bold text-green-500">
-        Tailwind is working 🚀
-      </h1>
+      <Counter />
     </div>
   )
 }
