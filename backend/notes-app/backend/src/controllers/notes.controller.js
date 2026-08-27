@@ -67,6 +67,26 @@ const updateNotesController = async (req, res) => {
     }
 }
 
+const singleEntityUpdateController = async (req, res) => {
+    try {
+        let noteId = req.params.id;
+        let body = req.body;
+
+        let updatedNote = await NotesModel.findByIdAndUpdate(noteId, body, {
+            new: true
+        })
+
+        return res.status(200).json({
+            message: "Notes Updated",
+            data: updatedNote
+        })
+    } catch (error) {
+        return res.status(500).json({
+            message: "Error in single patch notes API: "
+        })
+    }
+}
+
 const deleteNotesController = async (req, res) => {
     try {
         let noteId = req.params.id;
@@ -87,5 +107,6 @@ module.exports = {
     getAllNotesController,
     getSingleNotesController,
     updateNotesController,
-    deleteNotesController 
+    deleteNotesController,
+    singleEntityUpdateController 
 }
