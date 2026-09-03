@@ -1,11 +1,9 @@
 import dotenv from "dotenv";
 dotenv.config()
 import express from "express";
-import jwt from "jsonwebtoken";
 import connectDB from "../config/db.js";
-import { registerUserController } from "../controllers/user.controller.js";
-import mongoose from "mongoose";
-import UserModel from "../models/user.model.js";
+import { loginUserController, registerUserController } from "../controllers/user.controller.js";
+import { authenticateUser } from "../middlewares/auth.middleware.js";
 
 
 await connectDB();
@@ -20,13 +18,15 @@ app.get('/api', (req, res) => {
 
 app.post('/api/auth/register', registerUserController)
 
-app.get('/api/auth/me', async (req, res) => {
-    const authHeader = req.headers.authorization;
-    const decodeData = jwt.decode(authHeader);
-
-    const user = await UserModel.findById(decodeData.id);
-    
-    
+app.get('/api/auth/me', authenticateUser, (req, res) => {
+    res.status(200).json({
+        message: "User Authenticated!",
+        data: {
+            user: req.user
+        }
+    })
 })
+
+app.post('/api/auth/login', loginUserController)
 
 export default app;
