@@ -142,3 +142,45 @@ export const authRefreshController = async (req, res) => {
         })
     }
 }
+
+/**
+ * @POST /api/auth/login
+ */
+export const authLoginController = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        if (!email && !password) {
+            return res.status(401).json({
+                message: "Entered invalid email and password"
+            })
+        }
+
+        const user = await UserModel.findOne({ email });
+        const isPasswordMatched = await bcrypt.compare(password, user.passwordHash);
+
+        if (!isPasswordMatched){
+            console.log("Password does not match!");
+            return res.status(401).json({
+                message: "Invalid email or password"
+            })
+        }
+
+        const {accessToken, refreshToken} = generateTokens({userId: user._id});
+
+        res.cookie("refreshToken", refreshToken, {httpOnly: true});
+        user.refreshToken = refreshToken;
+        await user.save();
+        
+        res.status(200).json({
+            message: "User login successfully",
+            accessToken
+        })
+
+
+    } catch (error) {
+        console.log("Invalid email or password: ", error);
+        return res.status(401).json({
+            message: "Invalid email or password"
+        })
+    }
+}

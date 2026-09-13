@@ -1,5 +1,5 @@
-import {Router} from "express";
-import { authMeController, authRefreshController, authRegisterController } from "../controller/auth.controller.js";
+import { Router } from "express";
+import { authLoginController, authMeController, authRefreshController, authRegisterController } from "../controller/auth.controller.js";
 
 const router = Router();
 
@@ -17,5 +17,10 @@ router.get('/me', authMeController);
  * @GET /api/auth/me
  */
 router.post('/refresh', authRefreshController);
+
+/**
+ * @POST /api/auth/login
+ */
+router.post('/login', authLoginController);
 
 export default router;
